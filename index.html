@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nuevo Modelo Educativo EAN 2026 · Las tres competencias</title>
+<meta name="description" content="Las tres competencias del Modelo Educativo EAN 2026: Emprendimiento Sostenible, Poder Humano y Tech AI Maker.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" crossorigin="anonymous">
+<style>
+
+
+
+:root{
+  --negro:#1A1A1A; --negro-2:#232323; --arena:#FBF9F0; --blanco:#FFFFFF;
+  --verde:#3BAC52; --teal:#00C0B3; --morado:#9B6FD4;
+  --gris:#6E6A63; --linea-osc:rgba(255,255,255,.16);
+  --display:"Space Grotesk","Arial Narrow",Helvetica,Arial,sans-serif;
+  --body:"Open Sans","Segoe UI",Helvetica,Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--negro);color:var(--arena);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--display);font-weight:700;letter-spacing:-.02em;line-height:1.06;margin:0}
+p{margin:0 0 1em}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+:focus-visible{outline:2px solid var(--comp-acc-cl,var(--verde));outline-offset:2px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* barra superior común */
+.hub-bar{position:sticky;top:0;z-index:200;background:rgba(26,26,26,.97);backdrop-filter:blur(6px);border-bottom:1px solid var(--linea-osc)}
+.hub-bar .wrap{display:flex;align-items:center;gap:16px;padding-top:11px;padding-bottom:11px}
+.hub-marca{font-family:var(--display);font-weight:700;font-size:15px;white-space:nowrap;letter-spacing:-.01em}
+.hub-volver{font-family:var(--display);font-weight:700;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;background:var(--verde);border:1px solid var(--verde);color:#1A1A1A;padding:8px 15px;cursor:pointer;transition:.16s;display:none}
+.hub-volver:hover{background:#6FD183;border-color:#6FD183}
+.hub-bar.dentro .hub-volver{display:inline-block}
+.hub-logo{margin-left:auto;display:block;height:30px;width:auto;opacity:.92}
+
+/* portada */
+.portada{padding:clamp(52px,9vw,104px) 0 clamp(52px,8vw,96px);display:none}
+.portada.visible{display:block;animation:hubfade .5s ease}
+.portada .kicker{font-family:var(--display);font-weight:500;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:rgba(251,249,240,.5);display:block;margin-bottom:18px}
+.portada h1{font-size:clamp(38px,7.6vw,90px);line-height:.96}
+.portada .bajada{font-size:clamp(17px,2vw,21px);color:rgba(251,249,240,.72);max-width:60ch;margin-top:26px}
+.formula-hub{margin-top:36px;padding-top:22px;border-top:1px solid var(--linea-osc);font-family:var(--display);font-weight:700;font-size:clamp(13px,1.8vw,18px);color:rgba(251,249,240,.55);display:inline-block}
+.formula-hub b.a{color:var(--verde)} .formula-hub b.b{color:var(--teal)} .formula-hub sup{color:var(--morado)}
+.tarjetas{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-top:44px}
+.tarjeta{background:var(--negro-2);border:1px solid var(--linea-osc);border-top:3px solid var(--c);padding:30px 26px 34px;text-align:left;cursor:pointer;transition:.2s;display:flex;flex-direction:column;min-height:270px}
+.tarjeta:hover{border-color:var(--c);transform:translateY(-3px)}
+.tarjeta .n{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.18em;color:var(--c)}
+.tarjeta h2{font-size:clamp(24px,3vw,32px);margin:12px 0 14px;line-height:1.08;color:var(--c)}
+.tarjeta p{font-size:15px;line-height:1.55;color:rgba(251,249,240,.72);margin:0}
+.tarjeta .ir{margin-top:auto;padding-top:22px;font-family:var(--display);font-weight:700;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--c);display:flex;align-items:center;gap:8px}
+.tarjeta .ir::after{content:"→";font-size:15px;transition:transform .2s}
+.tarjeta:hover .ir::after{transform:translateX(5px)}
+.nota-talleres{margin-top:48px;border:1px solid var(--linea-osc);padding:24px 26px;max-width:78ch}
+.nota-talleres .k{font-family:var(--display);font-weight:700;font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;color:rgba(251,249,240,.5);display:block;margin-bottom:10px}
+.nota-talleres p{margin:0;font-size:15.5px;line-height:1.6;color:rgba(251,249,240,.75)}
+
+/* vistas */
+.aviso-fallo{background:#B4553F;color:#FBF9F0;padding:14px 24px;font-size:15px;text-align:center}
+.view{display:none}
+.view.visible{display:block;animation:hubfade .45s ease}
+.view .bloque-taller{background:#1A1A1A;color:#FBF9F0;border-top:1px solid rgba(255,255,255,.16);padding:clamp(46px,7vw,80px) 0;margin-top:0}
+.view .bloque-taller .caja{border:1px solid var(--comp-acc-cl,#6FD183);padding:clamp(24px,3.6vw,36px);display:grid;gap:10px}
+.view .bloque-taller .k{font-family:var(--display);font-weight:500;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--comp-acc-cl,#6FD183)}
+.view .bloque-taller h3{font-size:clamp(22px,3.2vw,32px);color:#FBF9F0;margin:0}
+.view .bloque-taller p{margin:0;font-size:16.5px;line-height:1.55;color:rgba(251,249,240,.8);max-width:64ch}
+.pie-hub{border-top:1px solid var(--linea-osc);padding:34px 0 52px;font-size:13.5px;color:rgba(251,249,240,.45)}
+@keyframes hubfade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+@media (max-width:700px){.hub-logo{height:24px}.hub-marca{font-size:13px}}
+
+
+.v-es{
+  --negro:#1A1A1A; --negro-2:#232323; --arena:#FBF9F0; --blanco:#FFFFFF;
+  --verde:#3BAC52; --verde-osc:#2C8540; --verde-cl:#6FD183;
+  --pregrado:#DFDF3F; --posgrado:#6FC3E8; --morado:#533278;
+  --rojo:#B4553F; --rojo-cl:#F0B6A6;
+  --gris:#6E6A63;
+  --linea:rgba(26,26,26,.14); --linea-osc:rgba(255,255,255,.16);
+  --display:"Space Grotesk","Arial Narrow",Helvetica,Arial,sans-serif;
+  --body:"Open Sans","Segoe UI",Helvetica,Arial,sans-serif;
+  --max:1180px;
+}.v-es *,.v-es *::before,.v-es *::after{box-sizing:border-box}.v-es{scroll-behavior:smooth}.v-es{margin:0;background:var(--arena);color:var(--negro);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}.v-es h1,.v-es h2,.v-es h3,.v-es h4{font-family:var(--display);font-weight:700;letter-spacing:-.02em;line-height:1.06;margin:0}.v-es p{margin:0 0 1em}.v-es .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}.v-es section{padding:clamp(56px,8vw,100px) 0;border-top:1px solid var(--linea)}.v-es .dark{background:var(--negro);color:var(--arena);border-top-color:var(--linea-osc)}.v-es .eyebrow{font-family:var(--display);font-weight:500;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--verde-osc);margin:0 0 14px;display:block}.v-es .dark .eyebrow{color:var(--verde-cl)}.v-es .h2{font-size:clamp(30px,4.6vw,52px);margin-bottom:18px}.v-es .lead{font-size:clamp(17px,2vw,21px);max-width:62ch;color:var(--gris)}.v-es .dark .lead{color:rgba(251,249,240,.72)}.v-es .hintline{font-size:14px;line-height:1.55;color:var(--gris)}.v-es .dark .hintline{color:rgba(251,249,240,.6)}.v-es :focus-visible{outline:2px solid var(--verde);outline-offset:2px}.v-es .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}.v-es .topbar{position:sticky;top:0;z-index:80;background:rgba(26,26,26,.97);backdrop-filter:blur(6px);border-bottom:1px solid var(--linea-osc)}.v-es .topbar .wrap{display:flex;align-items:center;gap:16px;padding-top:10px;padding-bottom:10px}.v-es .brandmark{font-family:var(--display);font-weight:700;color:var(--arena);font-size:15px;white-space:nowrap}.v-es .brandmark span{color:var(--verde-cl)}.v-es .navlinks{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;margin-left:auto}.v-es .navlinks::-webkit-scrollbar{display:none}.v-es .navlinks a{font-family:var(--display);font-weight:500;font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;color:rgba(251,249,240,.62);text-decoration:none;padding:7px 10px;white-space:nowrap;transition:.18s}.v-es .navlinks a:hover{color:var(--negro);background:var(--verde-cl)}.v-es .hero{background:var(--negro);color:var(--arena);padding:clamp(52px,9vw,110px) 0 clamp(46px,7vw,84px)}.v-es .hero-tag{display:inline-flex;gap:10px;border:1px solid var(--verde-cl);color:var(--verde-cl);font-family:var(--display);font-weight:500;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;padding:7px 13px;border-radius:100px;margin-bottom:24px}.v-es .hero h1{font-size:clamp(42px,9vw,112px);line-height:.92}.v-es .hero h1 em{font-style:normal;color:var(--verde-cl)}.v-es .hero-def{margin-top:30px;max-width:54ch;font-size:clamp(18px,2.3vw,26px);line-height:1.35;font-family:var(--display);font-weight:500;border-left:3px solid var(--verde-cl);padding-left:22px}.v-es .hero-sub{margin-top:26px;max-width:58ch;color:rgba(251,249,240,.7)}.v-es .formula{margin-top:34px;display:inline-flex;flex-wrap:wrap;gap:9px;font-family:var(--display);font-weight:700;font-size:clamp(13px,1.7vw,17px);border-top:1px solid var(--linea-osc);padding-top:20px;color:rgba(251,249,240,.55)}.v-es .formula b{color:var(--verde-cl)}.v-es .formula sup{color:var(--arena)}.v-es .switchrow{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}.v-es .pill{font-family:var(--display);font-weight:500;font-size:13px;letter-spacing:.06em;text-transform:uppercase;padding:10px 16px;border:1px solid var(--linea);background:transparent;color:var(--negro);border-radius:100px;cursor:pointer;transition:.16s}.v-es .pill:hover{border-color:var(--verde)}.v-es .pill[aria-selected="true"]{background:var(--verde);border-color:var(--verde);color:var(--negro)}.v-es .versionbox{border:1px solid var(--linea);background:var(--blanco);padding:clamp(22px,3.4vw,38px)}.v-es .versionbox .stmt{font-family:var(--display);font-weight:500;font-size:clamp(19px,2.6vw,28px);line-height:1.28}.v-es .versionbox .stmt mark{background:rgba(59,172,82,.28);color:inherit;padding:0 2px}.v-es .deltas{display:grid;margin-top:28px;border-top:1px solid var(--linea)}.v-es .delta{display:grid;grid-template-columns:170px 1fr;gap:18px;padding:14px 0;border-bottom:1px solid var(--linea)}.v-es .delta dt{font-family:var(--display);font-weight:700;font-size:14px}.v-es .delta dd{margin:0;font-size:15.5px;color:var(--gris)}.v-es .grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1px;background:var(--linea-osc);border:1px solid var(--linea-osc);margin-top:34px}.v-es .cell{background:var(--negro);padding:26px 22px 30px}.v-es .cell h3{font-size:20px;margin:10px 0}.v-es .cell p{font-size:15px;color:rgba(251,249,240,.68);margin:0}.v-es .cell .idx{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.16em;color:var(--verde-cl)}.v-es .motor{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:34px}.v-es .motor .col h3{font-size:15px;letter-spacing:.1em;text-transform:uppercase;font-weight:500;font-family:var(--display);margin-bottom:14px;color:var(--verde-osc)}.v-es .itemlist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}.v-es .itemlist button,.v-es .itemlist .static{width:100%;text-align:left;font-family:var(--body);font-size:15.5px;line-height:1.35;background:var(--blanco);border:1px solid var(--linea);color:var(--negro);padding:13px 15px;cursor:pointer;transition:.16s;display:flex;gap:11px;align-items:baseline}.v-es .itemlist .static{cursor:default;opacity:.62}.v-es .itemlist b{font-family:var(--display);font-size:12px;letter-spacing:.06em;color:var(--verde-osc);flex:none}.v-es .itemlist button:hover{border-color:var(--verde)}.v-es .itemlist button[aria-pressed="true"]{background:var(--negro);color:var(--arena);border-color:var(--negro)}.v-es .itemlist button[aria-pressed="true"] b{color:var(--verde-cl)}.v-es .itemlist .static.linked{opacity:1;border-color:var(--verde);background:rgba(59,172,82,.1)}.v-es .linkpanel{margin-top:26px;border:1px solid var(--negro);background:var(--negro);color:var(--arena);padding:clamp(20px,3vw,30px)}.v-es .linkpanel .k{font-family:var(--display);font-weight:500;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--verde-cl);display:block;margin-bottom:8px}.v-es .linkpanel p{margin:0;font-size:16.5px;line-height:1.5}.v-es .bridge{margin-top:44px;border-top:1px solid var(--linea);padding-top:34px}.v-es .bridgelist{list-style:none;margin:0;padding:0;display:grid;gap:1px;background:var(--linea);border:1px solid var(--linea)}.v-es .bridgelist li{background:var(--blanco);display:grid;grid-template-columns:230px 1fr;gap:18px;padding:15px 18px;align-items:baseline}.v-es .bridgelist b{font-family:var(--display);font-weight:700;font-size:15px}.v-es .bridgelist span{font-size:15px;color:var(--gris)}.v-es .fichas{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-top:34px}.v-es .ficha{border:1px solid var(--linea);background:var(--blanco)}.v-es .ficha > button{all:unset;cursor:pointer;padding:20px;display:block}.v-es .ficha > button:focus-visible{outline:2px solid var(--verde);outline-offset:-3px}.v-es .ficha .code{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.14em;color:var(--verde-osc)}.v-es .ficha h3{font-size:19px;margin:8px 0 0;line-height:1.15}.v-es .ficha .toggle{margin-top:14px;font-family:var(--display);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--gris);display:flex;gap:8px;align-items:center}.v-es .ficha .toggle::after{content:"+";font-size:17px}.v-es .ficha.open .toggle::after{content:"–"}.v-es .ficha.open{border-color:var(--negro)}.v-es .ficha .body{display:none;padding:0 20px 22px;border-top:1px solid var(--linea)}.v-es .ficha.open .body{display:block}.v-es .ficha dt{font-family:var(--display);font-weight:700;font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;margin-top:16px}.v-es .ficha dt.pre{color:#8a8a1f}.v-es .ficha dt.pos{color:#1F6E86}.v-es .ficha dd{margin:5px 0 0;font-size:15px;line-height:1.5;color:var(--gris)}.v-es .badge{display:inline-block;font-family:var(--display);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;padding:3px 7px;border:1px solid var(--morado);color:var(--morado);border-radius:100px;margin-left:8px;vertical-align:middle}
+
+/* ===== TALLER ===== */.v-es .tallertabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:34px}.v-es .ttab{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.05em;background:transparent;border:1px solid var(--linea-osc);color:rgba(251,249,240,.65);padding:12px 18px;cursor:pointer;transition:.16s;display:flex;gap:9px;align-items:center}.v-es .ttab:hover{border-color:var(--verde-cl)}.v-es .ttab[aria-selected="true"]{background:var(--verde);border-color:var(--verde);color:var(--negro)}.v-es .ttab .tk{font-size:12px;opacity:.35}.v-es .ttab.done .tk{opacity:1;color:var(--verde-cl)}.v-es .ttab[aria-selected="true"].done .tk{color:var(--negro)}.v-es .caja{border:1px solid var(--linea-osc);background:var(--negro-2);margin-top:20px;padding:clamp(22px,3.4vw,36px)}.v-es .caja h3{font-size:clamp(21px,3vw,30px);margin-bottom:14px}.v-es .task{border-left:2px solid var(--verde-cl);padding-left:20px;margin-bottom:28px}.v-es .task .k{font-family:var(--display);font-weight:500;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--verde-cl);display:block;margin-bottom:9px}.v-es .task p{margin:0;font-size:16.5px;line-height:1.5;color:var(--arena)}
+
+/* chips medios */.v-es .grupo{margin-bottom:26px}.v-es .grupo .g{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--verde-cl);display:block;margin-bottom:4px}.v-es .grupo .gs{display:block;font-size:14px;color:rgba(251,249,240,.55);margin-bottom:12px}.v-es .chipset{display:flex;flex-wrap:wrap;gap:8px}.v-es .chip{font-family:var(--body);font-size:15px;padding:10px 15px;border:1px solid var(--linea-osc);background:transparent;color:var(--arena);cursor:pointer;transition:.16s;border-radius:100px}.v-es .chip:hover{border-color:var(--verde-cl)}.v-es .chip[aria-pressed="true"]{background:var(--verde);border-color:var(--verde);color:var(--negro);font-weight:600}.v-es .partida{border:1px solid var(--verde);background:rgba(59,172,82,.08);padding:clamp(20px,3vw,30px);margin-top:28px;display:none}.v-es .partida.show{display:block;animation:es-rise .4s ease}.v-es .partida .k{font-family:var(--display);font-weight:500;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--verde-cl);display:block;margin-bottom:12px}.v-es .partida h4{font-size:clamp(19px,2.5vw,25px);line-height:1.25;margin-bottom:14px}.v-es .partida p{font-size:16px;line-height:1.55;color:rgba(251,249,240,.85)}.v-es .partida .espejo{font-size:15.5px;color:rgba(251,249,240,.72);line-height:1.55}.v-es .combos{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:1px;background:var(--linea-osc);border:1px solid var(--linea-osc)}.v-es .combos li{background:rgba(26,26,26,.55);padding:18px 20px;display:grid;grid-template-columns:150px 1fr;gap:8px 16px;align-items:baseline}.v-es .combos li b{grid-column:1/-1;font-family:var(--display);font-weight:700;font-size:16px;color:var(--verde-cl);margin-bottom:4px}.v-es .combos .lab{font-family:var(--display);font-weight:700;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(251,249,240,.45)}.v-es .combos span:not(.lab){font-size:15px;line-height:1.5;color:rgba(251,249,240,.85)}.v-es .combos .preg{color:var(--verde-cl)}@media (max-width:700px){.v-es .combos li{grid-template-columns:1fr;gap:3px}.v-es .combos .lab{margin-top:8px}}.v-es .combos b{font-family:var(--display);font-weight:700;font-size:16px;color:var(--verde-cl)}.v-es .combos span{font-size:15px;line-height:1.5;color:rgba(251,249,240,.85)}.v-es .combos .preg{color:rgba(251,249,240,.6);font-size:14.5px}.v-es .partida .cierre-p{margin-top:20px;font-family:var(--display);font-weight:500;font-size:clamp(16px,2vw,20px);line-height:1.3;color:var(--arena)}.v-es .partida .enlace03{margin-top:18px;padding:14px 16px;border:1px solid var(--verde);font-size:15px;line-height:1.5;color:rgba(251,249,240,.9)}.v-es .partida .enlace03 strong{color:var(--verde-cl)}.v-es .partida .sar{margin-top:18px;padding-top:16px;border-top:1px solid var(--linea-osc);font-size:14.5px;color:rgba(251,249,240,.62);margin-bottom:0}
+
+/* detector */.v-es .caso{border:1px solid var(--linea-osc);padding:20px 22px;margin-bottom:12px}.v-es .caso p{font-size:16px;line-height:1.55;margin:0 0 14px;color:rgba(251,249,240,.9)}.v-es .caso .btns{display:flex;gap:8px;flex-wrap:wrap}.v-es .cb{font-family:var(--display);font-weight:700;font-size:12.5px;letter-spacing:.07em;text-transform:uppercase;background:transparent;border:1px solid var(--linea-osc);color:var(--arena);padding:10px 18px;cursor:pointer;transition:.16s}.v-es .cb:hover:not(:disabled){border-color:var(--verde-cl)}.v-es .cb:disabled{cursor:default}.v-es .cb.sel-ok{background:var(--verde);border-color:var(--verde);color:var(--negro)}.v-es .cb.sel-no{background:rgba(180,85,63,.25);border-color:var(--rojo);color:var(--rojo-cl)}.v-es .caso .fb{margin-top:14px;font-size:15px;line-height:1.55;border-left:2px solid var(--verde-cl);padding-left:14px;color:rgba(251,249,240,.78);display:none}.v-es .caso .fb.show{display:block;animation:es-rise .3s ease}
+
+/* simulador */.v-es .ctxsim{border:1px solid var(--linea-osc);padding:20px 22px;margin-bottom:20px}.v-es .ctxsim .k{font-family:var(--display);font-weight:500;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--verde-cl);display:block;margin-bottom:8px}.v-es .ctxsim .orgline{font-family:var(--display);font-weight:700;font-size:clamp(18px,2.4vw,24px);line-height:1.2;margin:0 0 8px}.v-es .ctx{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--linea-osc);border:1px solid var(--linea-osc);margin-top:16px}.v-es .ctx>div{background:var(--negro);padding:14px 16px}.v-es .ctx .ck{font-family:var(--display);font-weight:700;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--verde-cl);display:block;margin-bottom:6px}.v-es .ctx p{margin:0;font-size:14.5px;line-height:1.45;color:rgba(251,249,240,.8)}.v-es .reglassim{border:1px solid var(--linea-osc);padding:20px 22px;margin-bottom:26px}.v-es .reglassim .k{font-family:var(--display);font-weight:500;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--verde-cl);display:block;margin-bottom:12px}.v-es .reglassim ul{margin:0;padding:0;list-style:none;display:grid;gap:8px}.v-es .reglassim li{font-size:14.5px;line-height:1.45;color:rgba(251,249,240,.78)}.v-es .reglassim b{font-family:var(--display);font-weight:700;font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--arena);margin-right:8px}.v-es .reglassim .meta{margin:16px 0 0;padding-top:14px;border-top:1px solid var(--linea-osc);font-family:var(--display);font-weight:700;font-size:15.5px;color:var(--verde-cl)}.v-es .hud{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;border:1px solid var(--linea-osc);padding:18px 20px;margin-bottom:26px}.v-es .stat .sn{font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:rgba(251,249,240,.5);display:block;margin-bottom:7px}.v-es .stat .sv{font-family:var(--display);font-weight:700;font-size:22px;line-height:1;display:block;margin-bottom:8px}.v-es .barra{height:5px;background:rgba(251,249,240,.14)}.v-es .barra i{display:block;height:5px;background:var(--verde);transition:width .45s cubic-bezier(.4,.1,.2,1)}.v-es .barra.t i{background:var(--pregrado)}.v-es .barra.c i{background:var(--posgrado)}.v-es .barra.e i{background:#D18F6F}.v-es .barra.v i{background:var(--verde)}.v-es .movida .m{font-family:var(--display);font-weight:700;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--verde-cl);display:block;margin-bottom:10px}.v-es .movida h4{font-size:clamp(20px,2.8vw,28px);line-height:1.15;margin-bottom:12px}.v-es .movida .esc{font-size:16.5px;line-height:1.55;color:rgba(251,249,240,.85);margin-bottom:22px}.v-es .jugadas{display:grid;gap:9px}.v-es .jugada{text-align:left;background:transparent;border:1px solid var(--linea-osc);color:var(--arena);padding:16px 18px;cursor:pointer;transition:.16s;font-family:var(--body);font-size:15.5px;line-height:1.45}.v-es .jugada:hover{border-color:var(--verde-cl)}.v-es .result{margin-top:22px;border-left:2px solid var(--verde-cl);padding-left:20px;animation:es-rise .4s ease}.v-es .result .k{font-family:var(--display);font-weight:500;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--verde-cl);display:block;margin-bottom:9px}.v-es .result p{font-size:16.5px;line-height:1.55;color:rgba(251,249,240,.88);margin:0 0 12px}.v-es .deltas-mini{display:flex;gap:12px;flex-wrap:wrap;font-family:var(--display);font-weight:700;font-size:12.5px;letter-spacing:.06em}.v-es .dm{padding:4px 10px;border:1px solid var(--linea-osc)}.v-es .dm.up{color:var(--verde-cl);border-color:rgba(111,209,131,.5)}.v-es .dm.down{color:var(--rojo-cl);border-color:rgba(180,85,63,.5)}.v-es .perfil{border:1px solid var(--verde);background:rgba(59,172,82,.08);padding:clamp(22px,3.4vw,34px);animation:es-rise .5s ease}.v-es .perfil .k{font-family:var(--display);font-weight:500;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--verde-cl);display:block;margin-bottom:12px}.v-es .perfil h3{font-size:clamp(26px,4.4vw,44px);margin-bottom:16px}.v-es .perfil h3 em{font-style:normal;color:var(--verde-cl)}.v-es .perfil p{font-size:16.5px;line-height:1.55;color:rgba(251,249,240,.85);max-width:64ch}.v-es .bitacora{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:1px;background:var(--linea-osc);border:1px solid var(--linea-osc)}.v-es .bitacora li{background:var(--negro-2);display:grid;grid-template-columns:110px 1fr 120px;gap:16px;padding:13px 16px;font-size:14.5px;align-items:baseline}.v-es .bitacora b{font-family:var(--display);font-weight:700;font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--verde-cl)}.v-es .bitacora .cmp{font-family:var(--display);font-weight:700;font-size:11.5px;letter-spacing:.09em;color:rgba(251,249,240,.5);text-align:right}.v-es .bitacora span{color:rgba(251,249,240,.82)}.v-es .btn{font-family:var(--display);font-weight:700;font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;background:var(--verde);color:var(--negro);border:0;padding:14px 24px;cursor:pointer;transition:.16s}.v-es .btn:hover:not(:disabled){background:var(--arena)}.v-es .btn.ghost{background:transparent;border:1px solid var(--linea-osc);color:var(--arena)}.v-es .btn.ghost:hover{border-color:var(--verde-cl)}.v-es .btn:disabled{opacity:.35;cursor:default}.v-es .navrow{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:24px}.v-es .msg{font-family:var(--display);font-weight:500;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--verde-cl)}
+
+/* nivelador */.v-es .track-switch{display:flex;gap:8px;margin-bottom:26px;flex-wrap:wrap}.v-es .track-switch button{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;background:transparent;border:1px solid var(--linea-osc);color:rgba(251,249,240,.7);padding:11px 20px;cursor:pointer;border-radius:100px;transition:.16s}.v-es .track-switch button[aria-pressed="true"]{color:var(--negro);border-color:transparent}.v-es .track-switch button[data-track="pregrado"][aria-pressed="true"]{background:var(--pregrado)}.v-es .track-switch button[data-track="posgrado"][aria-pressed="true"]{background:var(--posgrado)}.v-es .rail-line{height:2px;background:var(--linea-osc);position:relative}.v-es .rail-fill{position:absolute;left:0;top:0;height:2px;background:var(--acc,var(--verde));transition:width .34s cubic-bezier(.4,.1,.2,1)}.v-es .stops{display:grid;grid-template-columns:repeat(4,1fr);margin-top:-9px}.v-es .stop{background:none;border:0;padding:0;cursor:pointer;text-align:left}.v-es .stop .dot{width:16px;height:16px;border-radius:50%;background:var(--negro);border:2px solid var(--linea-osc);display:block;transition:.2s}.v-es .stop .lbl{display:block;margin-top:14px;font-family:var(--display);font-weight:700;font-size:clamp(13px,1.6vw,17px);color:rgba(251,249,240,.45);transition:.2s}.v-es .stop[aria-pressed="true"] .dot{background:var(--acc,var(--verde));border-color:var(--acc,var(--verde));transform:scale(1.25)}.v-es .stop[aria-pressed="true"] .lbl{color:var(--arena)}.v-es .stop:last-child{text-align:right}.v-es .stop:last-child .dot{margin-left:auto}.v-es .equiv{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3px;margin-top:38px}.v-es .equiv span{display:block;text-align:center;font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.11em;text-transform:uppercase;padding:9px 6px;color:rgba(251,249,240,.4);border:1px solid var(--linea-osc);transition:.22s}.v-es .equiv span.on{color:var(--negro);background:var(--acc,var(--verde));border-color:transparent}.v-es .equivnote{margin-top:14px;font-size:14px;line-height:1.55;color:rgba(251,249,240,.6);max-width:78ch}.v-es .equivnote strong{color:rgba(251,249,240,.9);font-weight:600}.v-es .panel4{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:1px;background:var(--linea-osc);border:1px solid var(--linea-osc);margin-top:40px}.v-es .panel4 .c{background:var(--negro);padding:24px 20px 28px}.v-es .panel4 .c:last-child{background:var(--negro-2)}.v-es .panel4 h4{font-family:var(--display);font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--acc,var(--verde));margin-bottom:12px}.v-es .panel4 p{font-size:15px;line-height:1.55;color:rgba(251,249,240,.82);margin:0}.v-es .fade-swap{animation:es-rise .32s ease}.v-es .marcos{display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));gap:14px;margin-top:34px}.v-es .marco{border:1px solid var(--linea);padding:24px 22px;background:var(--blanco);border-top:3px solid var(--morado)}.v-es .marco h3{font-size:18px;margin-bottom:6px}.v-es .marco .who{font-size:12.5px;font-family:var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--gris);margin-bottom:14px;display:block}.v-es .marco p{font-size:15px;color:var(--gris);margin:0}.v-es .twocol{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:34px}.v-es .tick{list-style:none;margin:0;padding:0}.v-es .tick li{padding:12px 0 12px 30px;border-bottom:1px solid var(--linea-osc);position:relative;font-size:16px}.v-es .tick li::before{content:"";position:absolute;left:0;top:19px;width:14px;height:2px;background:var(--verde-cl)}.v-es .tick li:last-child{border-bottom:0}@keyframes es-rise{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}.v-es .closing{font-family:var(--display);font-weight:700;font-size:clamp(26px,5vw,54px);line-height:1.05;max-width:20ch}.v-es .closing em{font-style:normal;color:var(--verde-cl)}@media (max-width:860px){.v-es .motor,.v-es .twocol,.v-es .delta,.v-es .bridgelist li{grid-template-columns:1fr;gap:4px}.v-es .bitacora li{grid-template-columns:1fr;gap:4px}.v-es .bitacora .cmp{text-align:left}.v-es .stop .lbl{font-size:13px}
+}@media (prefers-reduced-motion:reduce){.v-es *{animation:none!important;transition:none!important}.v-es{scroll-behavior:auto}}
+
+.v-es #es-niveles{--acc:var(--pregrado)}
+.v-es{--comp-acc:#3BAC52;--comp-acc-cl:#6FD183}
+
+.v-ph{
+  --negro:#1A1A1A;
+  --negro-2:#232323;
+  --arena:#FBF9F0;
+  --blanco:#FFFFFF;
+  --verde:#3BAC52;
+  --verde-osc:#2C8540;
+  --teal:#00C0B3;          /* acento Poder Humano (paleta de segmento oficial) */
+  --pregrado:#DFDF3F;
+  --posgrado:#6FC3E8;      /* derivado claro de #005E85 para fondo negro */
+  --morado:#533278;
+  --gris:#6E6A63;
+  --linea:rgba(26,26,26,.14);
+  --linea-osc:rgba(255,255,255,.16);
+  --display:"Space Grotesk","Arial Narrow",Helvetica,Arial,sans-serif;
+  --body:"Open Sans","Segoe UI",Helvetica,Arial,sans-serif;
+  --max:1180px;
+}.v-ph *,.v-ph *::before,.v-ph *::after{box-sizing:border-box}.v-ph{scroll-behavior:smooth}.v-ph{margin:0;background:var(--arena);color:var(--negro);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}.v-ph h1,.v-ph h2,.v-ph h3,.v-ph h4{font-family:var(--display);font-weight:700;letter-spacing:-.02em;line-height:1.06;margin:0}.v-ph p{margin:0 0 1em}.v-ph .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}.v-ph section{padding:clamp(56px,8vw,100px) 0;border-top:1px solid var(--linea)}.v-ph .dark{background:var(--negro);color:var(--arena);border-top-color:var(--linea-osc)}.v-ph .eyebrow{font-family:var(--display);font-weight:500;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--verde-osc);margin:0 0 14px;display:block}.v-ph .dark .eyebrow{color:var(--teal)}.v-ph .h2{font-size:clamp(30px,4.6vw,52px);margin-bottom:18px}.v-ph .lead{font-size:clamp(17px,2vw,21px);max-width:62ch;color:var(--gris)}.v-ph .dark .lead{color:rgba(251,249,240,.72)}.v-ph .hintline{font-size:14px;color:var(--gris);line-height:1.55}.v-ph .dark .hintline{color:rgba(251,249,240,.6)}.v-ph :focus-visible{outline:2px solid var(--teal);outline-offset:2px}.v-ph .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* ---------- topbar ---------- */.v-ph .topbar{position:sticky;top:0;z-index:80;background:rgba(26,26,26,.97);backdrop-filter:blur(6px);border-bottom:1px solid var(--linea-osc)}.v-ph .topbar .wrap{display:flex;align-items:center;gap:16px;padding-top:9px;padding-bottom:9px}.v-ph .brandmark{font-family:var(--display);font-weight:700;color:var(--arena);font-size:15px;white-space:nowrap}.v-ph .brandmark span{color:var(--teal)}.v-ph .stamps{display:flex;gap:5px;margin-left:auto;align-items:center}.v-ph .stamps .st{width:11px;height:11px;border-radius:50%;border:1.5px solid rgba(251,249,240,.35);transition:.25s}.v-ph .stamps .st.on{background:var(--teal);border-color:var(--teal);box-shadow:0 0 0 3px rgba(0,192,179,.18)}.v-ph .stamps .lbl{font-family:var(--display);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(251,249,240,.5);margin-right:6px}
+
+/* ---------- hero ---------- */.v-ph .hero{background:var(--negro);color:var(--arena);padding:clamp(52px,9vw,108px) 0 clamp(46px,7vw,84px)}.v-ph .hero-tag{display:inline-flex;gap:10px;border:1px solid var(--teal);color:var(--teal);font-family:var(--display);font-weight:500;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;padding:7px 13px;border-radius:100px;margin-bottom:24px}.v-ph .hero h1{font-size:clamp(42px,9vw,112px);line-height:.92}.v-ph .hero h1 em{font-style:normal;color:var(--teal)}.v-ph .hero-def{margin-top:30px;max-width:54ch;font-size:clamp(18px,2.3vw,26px);line-height:1.36;font-family:var(--display);font-weight:500;border-left:3px solid var(--teal);padding-left:22px}.v-ph .hero-sub{margin-top:26px;max-width:58ch;color:rgba(251,249,240,.7)}.v-ph .formula{margin-top:36px;display:inline-flex;flex-wrap:wrap;gap:9px;font-family:var(--display);font-weight:700;font-size:clamp(13px,1.7vw,17px);border-top:1px solid var(--linea-osc);padding-top:20px;color:rgba(251,249,240,.55)}.v-ph .formula b{color:var(--teal)}.v-ph .formula sup{color:var(--arena)}
+
+/* ---------- toggles / pills ---------- */.v-ph .switchrow{display:flex;gap:8px;flex-wrap:wrap;margin:30px 0 22px}.v-ph .pill{font-family:var(--display);font-weight:500;font-size:13px;letter-spacing:.06em;text-transform:uppercase;padding:10px 16px;border:1px solid var(--linea);background:transparent;color:var(--negro);border-radius:100px;cursor:pointer;transition:.16s}.v-ph .dark .pill{border-color:var(--linea-osc);color:var(--arena)}.v-ph .pill:hover{border-color:var(--teal)}.v-ph .pill[aria-selected="true"]{background:var(--teal);border-color:var(--teal);color:var(--negro)}.v-ph .defbox{border:1px solid var(--linea);background:var(--blanco);padding:clamp(22px,3.4vw,36px)}.v-ph .defbox p{font-family:var(--display);font-weight:500;font-size:clamp(17px,2.2vw,24px);line-height:1.34;margin:0}.v-ph .mindset-note{margin-top:16px;font-size:14.5px;color:var(--gris);font-family:var(--body);font-weight:400}
+
+/* ---------- no es / sí es ---------- */.v-ph .contrast{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--linea);border:1px solid var(--linea);margin-top:30px}.v-ph .contrast > div{background:var(--arena);padding:26px 24px 30px}.v-ph .contrast h3{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-family:var(--display);font-weight:500;margin-bottom:14px}.v-ph .contrast .no h3{color:#B4553F}.v-ph .contrast .si h3{color:var(--verde-osc)}.v-ph .contrast ul{margin:0;padding-left:18px}.v-ph .contrast li{margin-bottom:9px;font-size:15.5px}
+
+/* ---------- fichas capacidades ---------- */.v-ph .fichas{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px;margin-top:32px}.v-ph .ficha{border:1px solid var(--linea);background:var(--blanco);display:flex;flex-direction:column}.v-ph .ficha > button{all:unset;cursor:pointer;padding:20px}.v-ph .ficha > button:focus-visible{outline:2px solid var(--teal);outline-offset:-3px}.v-ph .ficha .code{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.14em;color:#00706A}.v-ph .ficha h3{font-size:19px;margin:8px 0 0;line-height:1.16}.v-ph .ficha .toggle{margin-top:14px;font-family:var(--display);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--gris);display:flex;gap:8px;align-items:center}.v-ph .ficha .toggle::after{content:"+";font-size:17px}.v-ph .ficha.open .toggle::after{content:"–"}.v-ph .ficha.open{border-color:var(--negro)}.v-ph .ficha .body{display:none;padding:0 20px 22px;border-top:1px solid var(--linea)}.v-ph .ficha.open .body{display:block}.v-ph .ficha dt{font-family:var(--display);font-weight:700;font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;margin-top:16px}.v-ph .ficha dt.pre{color:#8a8a1f}.v-ph .ficha dt.pos{color:#00706A}.v-ph .ficha dd{margin:5px 0 0;font-size:15px;line-height:1.5;color:var(--gris)}
+
+/* ================= CARRERA (elemento firma) ================= */.v-ph .raceintro{display:grid;grid-template-columns:1.1fr .9fr;gap:38px;align-items:end;margin-bottom:44px}.v-ph .racefacts{border-top:1px solid var(--linea-osc);padding-top:18px}.v-ph .racefacts dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:8px 18px;font-size:14.5px}.v-ph .racefacts dt{font-family:var(--display);font-weight:700;font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--teal);align-self:center}.v-ph .racefacts dd{margin:0;color:rgba(251,249,240,.78)}.v-ph .track{position:relative;margin:0 0 8px}.v-ph .trackline{height:2px;background:var(--linea-osc);position:relative}.v-ph .trackfill{position:absolute;left:0;top:0;height:2px;background:var(--teal);width:0;transition:width .45s cubic-bezier(.4,.1,.2,1)}.v-ph .gates{display:grid;grid-template-columns:repeat(6,1fr);margin-top:-10px;gap:4px}.v-ph .gate{background:none;border:0;padding:0;cursor:pointer;text-align:left}.v-ph .gate .dot{width:18px;height:18px;border-radius:50%;background:var(--negro);border:2px solid rgba(251,249,240,.3);display:grid;place-items:center;font-size:9px;color:rgba(251,249,240,.5);font-family:var(--display);transition:.22s}.v-ph .gate .gname{display:block;margin-top:13px;font-family:var(--display);font-weight:700;font-size:clamp(11px,1.35vw,15px);color:rgba(251,249,240,.42);letter-spacing:-.01em;transition:.2s}.v-ph .gate .gcomp{display:block;font-size:11.5px;color:rgba(251,249,240,.28);margin-top:3px;line-height:1.3}.v-ph .gate[data-state="active"] .dot{border-color:var(--teal);background:var(--negro);transform:scale(1.2);box-shadow:0 0 0 5px rgba(0,192,179,.15)}.v-ph .gate[data-state="active"] .gname{color:var(--arena)}.v-ph .gate[data-state="active"] .gcomp{color:var(--teal)}.v-ph .gate[data-state="done"] .dot{background:var(--teal);border-color:var(--teal);color:var(--negro)}.v-ph .gate[data-state="done"] .gname{color:rgba(251,249,240,.8)}.v-ph .gate:hover .gname{color:var(--arena)}.v-ph .station{margin-top:52px;border:1px solid var(--linea-osc);background:var(--negro-2)}.v-ph .st-head{padding:clamp(22px,3.2vw,34px);border-bottom:1px solid var(--linea-osc)}.v-ph .st-num{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.16em;color:var(--teal)}.v-ph .st-head h3{font-size:clamp(24px,3.6vw,38px);margin:10px 0 6px}.v-ph .st-lab{font-family:var(--display);font-weight:500;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:rgba(251,249,240,.55)}.v-ph .st-body{padding:clamp(22px,3.2vw,34px)}.v-ph .pista{border-left:2px solid var(--teal);padding-left:20px;margin-bottom:30px}.v-ph .pista .k{font-family:var(--display);font-weight:500;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:12px}.v-ph .pista p{font-family:var(--display);font-weight:500;font-size:clamp(16px,2vw,21px);line-height:1.45;color:var(--arena);margin:0 0 .6em}.v-ph .pista p:last-child{margin-bottom:0}.v-ph .pista .soft{color:rgba(251,249,240,.62);font-family:var(--body);font-weight:400;font-size:16px;line-height:1.55}.v-ph .guess .q{font-family:var(--display);font-weight:700;font-size:17px;margin-bottom:14px}.v-ph .labopts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px}.v-ph .labopt{text-align:left;font-family:var(--body);font-size:15.5px;padding:15px 16px;background:transparent;border:1px solid var(--linea-osc);color:var(--arena);cursor:pointer;transition:.16s}.v-ph .labopt:hover:not(:disabled){border-color:var(--teal)}.v-ph .labopt.ok{border-color:var(--teal);background:rgba(0,192,179,.16)}.v-ph .labopt.no{border-color:#B4553F;background:rgba(180,85,63,.14);opacity:.75}.v-ph .labopt:disabled{cursor:default}.v-ph .guessfb{margin-top:14px;font-size:15px;color:rgba(251,249,240,.72);display:none;border-left:2px solid var(--teal);padding-left:14px}.v-ph .guessfb.show{display:block;animation:ph-fade .3s ease}.v-ph .unlocked{display:none}.v-ph .unlocked.show{display:block;animation:ph-fade .42s ease}@keyframes ph-fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}.v-ph .blocks{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1px;background:var(--linea-osc);border:1px solid var(--linea-osc);margin-top:8px}.v-ph .block{background:var(--negro);padding:22px 20px 26px}.v-ph .block h4{font-family:var(--display);font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--teal);margin-bottom:11px}.v-ph .block p,.v-ph .block li{font-size:15px;line-height:1.55;color:rgba(251,249,240,.82);margin:0}.v-ph .block ul{margin:0;padding-left:17px}.v-ph .block li{margin-bottom:7px}.v-ph .frase{margin-top:26px;font-family:var(--display);font-weight:500;font-size:clamp(17px,2.3vw,24px);line-height:1.34;color:var(--arena);border-top:1px solid var(--linea-osc);padding-top:24px}.v-ph .transf{margin-top:22px;background:rgba(0,192,179,.1);border:1px solid rgba(0,192,179,.35);padding:20px 22px}.v-ph .transf .k{font-family:var(--display);font-weight:500;font-size:11.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:9px}.v-ph .transf p{margin:0;font-size:16.5px;line-height:1.5;color:var(--arena)}.v-ph .sello{margin-top:28px;border-top:1px solid var(--linea-osc);padding-top:26px}.v-ph .sello h4{font-family:var(--display);font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--teal);margin-bottom:16px}.v-ph .field{margin-bottom:16px}.v-ph .field label{display:block;font-size:14px;color:rgba(251,249,240,.7);margin-bottom:7px}.v-ph .field input,.v-ph .field textarea,.v-ph .mapa textarea,.v-ph .mapa input{
+  width:100%;background:transparent;border:1px solid var(--linea-osc);color:var(--arena);
+  font-family:var(--body);font-size:15.5px;padding:12px 14px;line-height:1.5;resize:vertical;
+}.v-ph .mapa textarea,.v-ph .mapa input{border-color:var(--linea);color:var(--negro);background:var(--blanco)}.v-ph .field input:focus,.v-ph .field textarea:focus{border-color:var(--teal);outline:none}.v-ph .btn{
+  font-family:var(--display);font-weight:700;font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;
+  background:var(--teal);color:var(--negro);border:0;padding:14px 24px;cursor:pointer;transition:.16s;
+}.v-ph .btn:hover{background:var(--arena)}.v-ph .btn.ghost{background:transparent;border:1px solid var(--linea);color:var(--negro)}.v-ph .btn.ghost:hover{border-color:var(--teal);background:transparent}.v-ph .btn:disabled{opacity:.4;cursor:default}.v-ph .navrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px;align-items:center}.v-ph .savednote{font-size:13.5px;color:var(--teal);font-family:var(--display);font-weight:500;letter-spacing:.06em;text-transform:uppercase}
+
+/* ---------- escena + reto ---------- */.v-ph .escena{position:relative;border:1px solid var(--linea-osc);background:linear-gradient(160deg,#232323 0%,#171717 100%);overflow:hidden;margin-bottom:26px;perspective:900px}.v-ph .escena img{display:block;width:100%;height:auto}.v-ph .svgescena svg{display:block;width:100%;height:auto;transition:transform .5s cubic-bezier(.3,.1,.2,1)}.v-ph .escena:hover svg{transform:rotateX(4deg) rotateY(-4deg) scale(1.02)}.v-ph .escena-tag{position:absolute;left:16px;bottom:14px;font-family:var(--display);font-weight:700;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);background:rgba(26,26,26,.8);padding:6px 11px;border:1px solid rgba(0,192,179,.4)}.v-ph .retowrap{border:1px solid var(--teal);padding:clamp(20px,3vw,28px);background:rgba(0,192,179,.05)}.v-ph .retowrap>.k{font-family:var(--display);font-weight:500;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:16px}.v-ph .retoint{font-size:16.5px;line-height:1.55;color:var(--arena);margin-bottom:20px}.v-ph .opt{text-align:left;background:transparent;border:1px solid var(--linea-osc);color:var(--arena);padding:14px 16px;cursor:pointer;transition:.16s;font-family:var(--body);width:100%}.v-ph .opt:hover:not(:disabled){border-color:var(--teal)}.v-ph .opt[aria-pressed="true"]{border-color:var(--teal);background:rgba(0,192,179,.16)}.v-ph .opt:disabled{opacity:.5;cursor:default}.v-ph .opt .ot{display:block;font-family:var(--display);font-weight:700;font-size:15.5px;margin-bottom:4px}.v-ph .opt .od{display:block;font-size:14.5px;line-height:1.45;color:rgba(251,249,240,.8)}.v-ph .opt.mini{padding:11px 14px}.v-ph .opts{display:grid;gap:8px}.v-ph .opts.dos{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}.v-ph .subreto,.v-ph .giro,.v-ph .guion,.v-ph .ronda{margin-top:22px;padding-top:20px;border-top:1px solid var(--linea-osc)}.v-ph .subreto>.k,.v-ph .giro>.k,.v-ph .guion>.k,.v-ph .ronda>.k,.v-ph .casocard>.k,.v-ph .bloqueMedia>.k{font-family:var(--display);font-weight:700;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:12px}.v-ph .casocard{border-left:2px solid var(--teal);padding-left:18px;margin-bottom:22px}.v-ph .casocard p{margin:0;font-size:16px;line-height:1.55;color:rgba(251,249,240,.9)}.v-ph .casocard.sobre{border-left-color:var(--pregrado);margin-top:24px}.v-ph .casocard.sobre>.k{color:var(--pregrado)}.v-ph .qset{display:grid;gap:18px}.v-ph .qt{font-family:var(--display);font-weight:700;font-size:15.5px;margin-bottom:9px}.v-ph .flashreto{margin:16px 0 0;font-size:14.5px;color:#F0B6A6;border-left:2px solid #B4553F;padding-left:12px;display:none}.v-ph .flashreto.show{display:block;animation:ph-fade .3s ease}.v-ph .retoclosed p{margin:0;font-family:var(--display);font-weight:500;font-size:clamp(16px,2.1vw,21px);line-height:1.35;color:var(--teal)}.v-ph .resolve{display:grid;gap:1px;background:var(--linea-osc);border:1px solid var(--linea-osc);margin-bottom:18px}.v-ph .resolve .letra{background:var(--negro);display:grid;grid-template-columns:44px 1fr;gap:14px;padding:11px 14px;align-items:center}.v-ph .resolve .L{font-family:var(--display);font-weight:700;font-size:20px;color:rgba(251,249,240,.3);text-align:center}.v-ph .resolve .llena .L{color:var(--teal)}.v-ph .resolve .paso{font-size:14.5px;color:rgba(251,249,240,.45)}.v-ph .resolve .llena .paso{color:var(--arena)}.v-ph .fichas-cap{display:flex;flex-wrap:wrap;gap:7px}.v-ph .chipcap{font-family:var(--body);font-size:14px;padding:9px 13px;border:1px solid var(--linea-osc);background:transparent;color:var(--arena);cursor:pointer;transition:.16s;text-align:left}.v-ph .chipcap:hover:not(:disabled){border-color:var(--teal)}.v-ph .chipcap.usado{opacity:.28;cursor:default}.v-ph .fbreto{margin-top:20px;padding:16px 18px;border:1px solid var(--linea-osc)}.v-ph .fbreto.bien{border-color:var(--verde);background:rgba(59,172,82,.12)}.v-ph .fbreto.mal{border-color:#B4553F;background:rgba(180,85,63,.12)}.v-ph .fbreto p{font-size:15px;line-height:1.55;margin:0 0 10px}.v-ph .fbreto p:last-child{margin-bottom:0}.v-ph .esc{font-size:16px;line-height:1.55;color:rgba(251,249,240,.88)}.v-ph .elegida{font-family:var(--display);font-weight:700;font-size:15px;color:var(--teal);margin:12px 0 8px}.v-ph .consecR{border-left:2px solid var(--teal);padding-left:16px}.v-ph .consecR p{margin:0;font-size:15.5px;line-height:1.55;color:rgba(251,249,240,.85)}.v-ph .bloqueMedia{margin-bottom:18px}.v-ph .txtguion{font-family:var(--display);font-weight:500;font-size:clamp(16px,2.1vw,20px);line-height:1.4;color:var(--arena);margin:0 0 14px}.v-ph .medidor{display:inline-block;font-family:var(--display);font-weight:700;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;padding:7px 13px;border:1px solid var(--teal);color:var(--teal)}.v-ph .medidor.pasado{border-color:#B4553F;color:#F0B6A6}.v-ph .rubmini{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}.v-ph .rubmini span{font-family:var(--display);font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;border:1px solid var(--linea-osc);color:rgba(251,249,240,.35)}.v-ph .rubmini .si{border-color:var(--verde);color:#A9E0B5}.v-ph .avisoreto{margin-top:14px;font-size:14.5px;color:rgba(251,249,240,.7);border-left:2px solid var(--pregrado);padding-left:12px}.v-ph #trasReto{animation:ph-fade .45s ease}@media (max-width:700px){.v-ph .resolve .letra{grid-template-columns:32px 1fr;gap:10px}}
+/* ---------- pasaporte ---------- */.v-ph .pass{margin-top:52px;border:1px solid var(--linea-osc)}.v-ph .pass caption{text-align:left;font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--teal);padding:18px 20px}.v-ph table.pass{width:100%;border-collapse:collapse;font-size:14.5px}.v-ph .pass th,.v-ph .pass td{text-align:left;padding:13px 16px;border-top:1px solid var(--linea-osc);vertical-align:top}.v-ph .pass th{font-family:var(--display);font-weight:700;font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;color:rgba(251,249,240,.55);font-weight:500}.v-ph .pass td{color:rgba(251,249,240,.8)}.v-ph .pass td.empty{color:rgba(251,249,240,.28);font-style:italic}.v-ph .pass .selo{color:var(--teal);font-family:var(--display);font-weight:700}
+
+/* ---------- nivelador ---------- */.v-ph .track-switch{display:flex;gap:8px;margin-bottom:26px;flex-wrap:wrap}.v-ph .track-switch button{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;background:transparent;border:1px solid var(--linea-osc);color:rgba(251,249,240,.7);padding:11px 20px;cursor:pointer;border-radius:100px;transition:.16s}.v-ph .track-switch button[aria-pressed="true"]{color:var(--negro);border-color:transparent}.v-ph .track-switch button[data-track="pregrado"][aria-pressed="true"]{background:var(--pregrado)}.v-ph .track-switch button[data-track="posgrado"][aria-pressed="true"]{background:var(--posgrado)}.v-ph .rail-line{height:2px;background:var(--linea-osc);position:relative}.v-ph .rail-fill{position:absolute;left:0;top:0;height:2px;background:var(--acc,var(--teal));transition:width .34s cubic-bezier(.4,.1,.2,1)}.v-ph .stops{display:grid;grid-template-columns:repeat(4,1fr);margin-top:-9px}.v-ph .stop{background:none;border:0;padding:0;cursor:pointer;text-align:left}.v-ph .stop .dot{width:16px;height:16px;border-radius:50%;background:var(--negro);border:2px solid var(--linea-osc);display:block;transition:.2s}.v-ph .stop .lbl{display:block;margin-top:14px;font-family:var(--display);font-weight:700;font-size:clamp(13px,1.6vw,17px);color:rgba(251,249,240,.45);transition:.2s}.v-ph .stop[aria-pressed="true"] .dot{background:var(--acc,var(--teal));border-color:var(--acc,var(--teal));transform:scale(1.25)}.v-ph .stop[aria-pressed="true"] .lbl{color:var(--arena)}.v-ph .stop:last-child{text-align:right}.v-ph .stop:last-child .dot{margin-left:auto}.v-ph .panel4{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:1px;background:var(--linea-osc);border:1px solid var(--linea-osc);margin-top:44px}.v-ph .panel4 .c{background:var(--negro);padding:24px 20px 28px}.v-ph .panel4 .c:last-child{background:var(--negro-2)}.v-ph .panel4 h4{font-family:var(--display);font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--acc,var(--teal));margin-bottom:12px}.v-ph .panel4 p{font-size:15px;line-height:1.55;color:rgba(251,249,240,.82);margin:0}.v-ph .fade-swap{animation:ph-fade .32s ease}
+
+/* ---------- tabla comparativa ---------- */.v-ph .cmp{width:100%;border-collapse:collapse;margin-top:30px;font-size:15.5px}.v-ph .cmp th,.v-ph .cmp td{text-align:left;padding:15px 16px;border-bottom:1px solid var(--linea);vertical-align:top}.v-ph .cmp thead th{font-family:var(--display);font-size:12px;letter-spacing:.13em;text-transform:uppercase;border-bottom:2px solid var(--negro)}.v-ph .cmp thead th:nth-child(2){color:#8a8a1f}.v-ph .cmp thead th:nth-child(3){color:#00706A}.v-ph .cmp td:first-child{font-weight:600;width:26%}
+
+/* ---------- mapa final ---------- */.v-ph .mapa{border:1px solid var(--linea);background:var(--blanco);padding:clamp(22px,3.4vw,34px);margin-top:32px}.v-ph .mapa .field label{color:var(--negro);font-weight:600;font-size:14.5px}.v-ph .mapa .field .help{display:block;font-weight:400;color:var(--gris);font-size:13.5px;margin-top:2px}.v-ph .rub{width:100%;border-collapse:collapse;margin-top:34px;font-size:14.5px}.v-ph .rub th,.v-ph .rub td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--linea);vertical-align:top}.v-ph .rub thead th{font-family:var(--display);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;border-bottom:2px solid var(--negro)}.v-ph .rub td:first-child{font-weight:600}.v-ph .rub td:last-child{color:var(--verde-osc)}.v-ph .closing{font-family:var(--display);font-weight:700;font-size:clamp(24px,4.4vw,48px);line-height:1.08;max-width:22ch}.v-ph .closing em{font-style:normal;color:var(--teal)}@media (max-width:860px){.v-ph .raceintro,.v-ph .contrast,.v-ph .gates{grid-template-columns:repeat(3,1fr);gap:14px 6px}.v-ph .gate .gcomp{display:none}.v-ph .trackline{display:none}.v-ph .stop .lbl{font-size:13px}.v-ph .pass thead{display:none}.v-ph .pass tr{display:block;border-top:1px solid var(--linea-osc)}.v-ph .pass td{display:block;border-top:0;padding:6px 16px}.v-ph .pass td:first-child{padding-top:14px}.v-ph .pass td:last-child{padding-bottom:16px}
+}@media (prefers-reduced-motion:reduce){.v-ph *{animation:none!important;transition:none!important}.v-ph{scroll-behavior:auto}}@media print{.v-ph .topbar,.v-ph .hero,.v-ph .station,.v-ph .track,.v-ph .pass caption,.v-ph .btn,.v-ph nav{display:none!important}.v-ph{background:#fff;color:#000}
+}
+
+/* ---------- escena con fotografía real ---------- */.v-ph .fotoescena img{transition:transform .6s cubic-bezier(.3,.1,.2,1)}.v-ph .escena:hover img{transform:scale(1.04)}.v-ph .fotoescena::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(to top,rgba(26,26,26,.85) 0%,rgba(26,26,26,.15) 42%,rgba(26,26,26,0) 70%)}.v-ph .fotoescena .escena-tag{z-index:2;background:rgba(26,26,26,.72)}
+
+.v-ph #ph-niveles{--acc:var(--pregrado)}
+.v-ph{--comp-acc:#00C0B3;--comp-acc-cl:#00C0B3}
+
+.v-tam{
+  --negro:#1A1A1A; --negro-2:#232323; --arena:#FBF9F0; --blanco:#FFFFFF;
+  --verde:#3BAC52; --verde-osc:#2C8540;
+  --tam:#9B6FD4; --tam-osc:#533278;
+  --pregrado:#DFDF3F; --posgrado:#6FC3E8;
+  --gris:#6E6A63;
+  --linea:rgba(26,26,26,.14); --linea-osc:rgba(255,255,255,.16);
+  --display:"Space Grotesk","Arial Narrow",Helvetica,Arial,sans-serif;
+  --body:"Open Sans","Segoe UI",Helvetica,Arial,sans-serif;
+  --max:1180px;
+}.v-tam *,.v-tam *::before,.v-tam *::after{box-sizing:border-box}.v-tam{scroll-behavior:smooth}.v-tam{margin:0;background:var(--arena);color:var(--negro);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}.v-tam h1,.v-tam h2,.v-tam h3,.v-tam h4{font-family:var(--display);font-weight:700;letter-spacing:-.02em;line-height:1.06;margin:0}.v-tam p{margin:0 0 1em}.v-tam .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}.v-tam section{padding:clamp(56px,8vw,100px) 0;border-top:1px solid var(--linea)}.v-tam .dark{background:var(--negro);color:var(--arena);border-top-color:var(--linea-osc)}.v-tam .eyebrow{font-family:var(--display);font-weight:500;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--tam-osc);margin:0 0 14px;display:block}.v-tam .dark .eyebrow{color:var(--tam)}.v-tam .h2{font-size:clamp(30px,4.6vw,52px);margin-bottom:18px}.v-tam .lead{font-size:clamp(17px,2vw,21px);max-width:62ch;color:var(--gris)}.v-tam .dark .lead{color:rgba(251,249,240,.72)}.v-tam .hintline{font-size:14px;line-height:1.55;color:var(--gris)}.v-tam .dark .hintline{color:rgba(251,249,240,.6)}.v-tam :focus-visible{outline:2px solid var(--tam);outline-offset:2px}.v-tam .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}.v-tam .topbar{position:sticky;top:0;z-index:80;background:rgba(26,26,26,.97);backdrop-filter:blur(6px);border-bottom:1px solid var(--linea-osc)}.v-tam .topbar .wrap{display:flex;align-items:center;gap:18px;padding-top:10px;padding-bottom:10px}.v-tam .brandmark{font-family:var(--display);font-weight:700;color:var(--arena);font-size:15px;white-space:nowrap}.v-tam .brandmark span{color:var(--tam)}.v-tam .navlinks{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;margin-left:auto}.v-tam .navlinks::-webkit-scrollbar{display:none}.v-tam .navlinks a{font-family:var(--display);font-weight:500;font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;color:rgba(251,249,240,.62);text-decoration:none;padding:7px 10px;white-space:nowrap;transition:.18s}.v-tam .navlinks a:hover{color:var(--negro);background:var(--tam)}.v-tam .hero{background:var(--negro);color:var(--arena);padding:clamp(52px,9vw,104px) 0 clamp(46px,7vw,80px)}.v-tam .hero-tag{display:inline-flex;gap:10px;border:1px solid var(--tam);color:var(--tam);font-family:var(--display);font-weight:500;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;padding:7px 13px;border-radius:100px;margin-bottom:24px}.v-tam .hero h1{font-size:clamp(40px,8.4vw,104px);line-height:.92}.v-tam .hero h1 em{font-style:normal;color:var(--tam)}.v-tam .hero-def{margin-top:30px;max-width:56ch;font-size:clamp(18px,2.2vw,25px);line-height:1.36;font-family:var(--display);font-weight:500;border-left:3px solid var(--tam);padding-left:22px}.v-tam .hero-sub{margin-top:26px;max-width:60ch;color:rgba(251,249,240,.7)}.v-tam .formula{margin-top:34px;display:inline-flex;flex-wrap:wrap;gap:9px;font-family:var(--display);font-weight:700;font-size:clamp(13px,1.7vw,17px);border-top:1px solid var(--linea-osc);padding-top:20px;color:rgba(251,249,240,.55)}.v-tam .formula sup{color:var(--tam);font-size:.8em}
+
+/* triada */.v-tam .triada{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:34px}.v-tam .triword{background:transparent;border:1px solid var(--linea);padding:26px 20px 30px;cursor:pointer;text-align:left;transition:.18s}.v-tam .triword:hover{border-color:var(--tam-osc)}.v-tam .triword[aria-pressed="true"]{background:var(--negro);border-color:var(--negro);color:var(--arena)}.v-tam .triword .w{font-family:var(--display);font-weight:700;font-size:clamp(26px,4.4vw,46px);letter-spacing:-.03em;line-height:1;display:block;transition:.18s}.v-tam .triword[aria-pressed="true"] .w{color:var(--tam)}.v-tam .triword .s{display:block;margin-top:10px;font-size:13.5px;color:var(--gris);line-height:1.4}.v-tam .triword[aria-pressed="true"] .s{color:rgba(251,249,240,.7)}.v-tam .tribody{border:1px solid var(--linea);border-top:0;background:var(--blanco);padding:clamp(22px,3.4vw,34px)}.v-tam .tribody p{font-family:var(--display);font-weight:500;font-size:clamp(17px,2.2vw,24px);line-height:1.34;margin:0}.v-tam .tribody .cita{margin-top:16px;font-family:var(--body);font-weight:400;font-size:14.5px;color:var(--gris);line-height:1.55}.v-tam .switchrow{display:flex;gap:8px;flex-wrap:wrap;margin:40px 0 20px}.v-tam .pill{font-family:var(--display);font-weight:500;font-size:13px;letter-spacing:.06em;text-transform:uppercase;padding:10px 16px;border:1px solid var(--linea);background:transparent;color:var(--negro);border-radius:100px;cursor:pointer;transition:.16s}.v-tam .pill:hover{border-color:var(--tam-osc)}.v-tam .pill[aria-selected="true"]{background:var(--tam-osc);border-color:var(--tam-osc);color:var(--arena)}.v-tam .defbox{border:1px solid var(--linea);background:var(--blanco);padding:clamp(22px,3.4vw,34px)}.v-tam .defbox p.st{font-family:var(--display);font-weight:500;font-size:clamp(17px,2.1vw,23px);line-height:1.34;margin:0}.v-tam .defbox .note{margin-top:16px;font-size:14.5px;color:var(--gris)}
+
+/* momentos maker */.v-tam .momentos{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1px;background:var(--linea-osc);border:1px solid var(--linea-osc);margin-top:34px}.v-tam .mom{background:var(--negro);padding:26px 22px 30px}.v-tam .mom .n{font-family:var(--display);font-weight:700;font-size:11.5px;letter-spacing:.16em;color:var(--tam)}.v-tam .mom h3{font-size:20px;margin:9px 0 12px}.v-tam .mom p{font-size:15px;line-height:1.55;color:rgba(251,249,240,.78);margin:0}.v-tam .errorbox{margin-top:28px;border:1px solid var(--tam);background:rgba(155,111,212,.1);padding:clamp(20px,3vw,28px)}.v-tam .errorbox p{font-family:var(--display);font-weight:500;font-size:clamp(17px,2.3vw,24px);line-height:1.32;margin:0;color:var(--arena)}
+
+/* consola capacidades */.v-tam .lever{display:inline-flex;border:1px solid var(--linea-osc);border-radius:100px;overflow:hidden}.v-tam .lever button{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;background:transparent;border:0;color:rgba(251,249,240,.65);padding:13px 24px;cursor:pointer;transition:.18s}.v-tam .lever button[aria-pressed="true"]{background:var(--tam);color:var(--negro)}.v-tam .capgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(275px,1fr));gap:1px;background:var(--linea-osc);border:1px solid var(--linea-osc);margin-top:30px}.v-tam .cap{background:var(--negro);padding:24px 22px 28px}.v-tam .cap .n{font-family:var(--display);font-weight:700;font-size:11.5px;letter-spacing:.16em;color:var(--tam)}.v-tam .cap h3{font-size:19px;margin:9px 0 10px;line-height:1.18}.v-tam .cap p{font-size:15px;line-height:1.55;color:rgba(251,249,240,.75);margin:0}.v-tam .cap .aula{margin-top:14px;padding-top:13px;border-top:1px solid var(--linea-osc);font-size:14px;color:var(--tam)}.v-tam .stagger{animation:tam-rise .4s cubic-bezier(.3,.1,.2,1) both}@keyframes tam-rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* ===== MESA DE TRABAJO ===== */.v-tam .mesa{margin-top:36px;border:1px solid var(--linea-osc);background:var(--negro-2)}.v-tam .mesahead{display:flex;flex-wrap:wrap;gap:14px;align-items:center;padding:16px 22px;border-bottom:1px solid var(--linea-osc)}.v-tam .iterchip{font-family:var(--display);font-weight:700;font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;padding:6px 12px;border:1px solid var(--linea-osc);color:rgba(251,249,240,.4)}.v-tam .iterchip.on{background:var(--tam);border-color:var(--tam);color:var(--negro)}.v-tam .iterchip.done{border-color:var(--tam);color:var(--tam)}.v-tam .mesabody{padding:clamp(22px,3.4vw,34px)}.v-tam .paso{margin-bottom:30px}.v-tam .paso .k{font-family:var(--display);font-weight:700;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--tam);display:block;margin-bottom:12px}.v-tam .paso h3{font-size:clamp(20px,2.8vw,27px);margin-bottom:14px}.v-tam .opts{display:grid;gap:8px}.v-tam .opts.dos{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}.v-tam .opt{text-align:left;background:transparent;border:1px solid var(--linea-osc);color:var(--arena);padding:15px 17px;cursor:pointer;transition:.16s;font-size:15.5px;line-height:1.45}.v-tam .opt:hover:not(:disabled){border-color:var(--tam)}.v-tam .opt[aria-pressed="true"]{border-color:var(--tam);background:rgba(155,111,212,.16)}.v-tam .opt .ot{display:block;font-family:var(--display);font-weight:700;font-size:15.5px;margin-bottom:4px}.v-tam .opt .od{display:block;font-size:14px;color:rgba(251,249,240,.6);line-height:1.45}.v-tam .ctx{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:var(--linea-osc);border:1px solid var(--linea-osc);margin:18px 0 10px}.v-tam .ctx>div{background:var(--negro);padding:14px 16px}.v-tam .ctx .ck{font-family:var(--display);font-weight:700;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--tam);display:block;margin-bottom:6px}.v-tam .ctx p{margin:0;font-size:14.5px;line-height:1.45;color:rgba(251,249,240,.8)}.v-tam .capk{font-family:var(--display);font-weight:700;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:rgba(251,249,240,.42);display:block;margin:-6px 0 10px}.v-tam .estado{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}.v-tam .estado span{font-family:var(--display);font-weight:700;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;padding:5px 10px;border:1px solid var(--linea-osc);color:rgba(251,249,240,.35)}.v-tam .estado span.on{border-color:var(--tam);color:var(--tam)}.v-tam .estado span.done{background:var(--tam);border-color:var(--tam);color:var(--negro)}.v-tam .prueba .costo{margin-top:12px;color:rgba(251,249,240,.62);font-size:15.5px}.v-tam .ficha{border:1px solid var(--tam);margin-top:26px}.v-tam .ficha .fh{padding:12px 18px;border-bottom:1px solid var(--linea-osc);font-family:var(--display);font-weight:700;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--tam)}.v-tam .ficha dl{margin:0;display:grid;grid-template-columns:160px 1fr}.v-tam .ficha dt{padding:12px 18px;font-family:var(--display);font-weight:700;font-size:11.5px;letter-spacing:.11em;text-transform:uppercase;color:rgba(251,249,240,.5);border-top:1px solid var(--linea-osc)}.v-tam .ficha dd{margin:0;padding:12px 18px;font-size:15.5px;color:rgba(251,249,240,.85);border-top:1px solid var(--linea-osc)}.v-tam .prueba{margin-top:24px;border-left:2px solid #B4553F;padding-left:20px;display:none}.v-tam .prueba.show{display:block;animation:tam-rise .4s ease}.v-tam .prueba .k{font-family:var(--display);font-weight:500;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:#E39B85;display:block;margin-bottom:9px}.v-tam .prueba p{font-size:16.5px;line-height:1.55;color:rgba(251,249,240,.88);margin:0}.v-tam .ok{border-left-color:var(--verde)}.v-tam .ok .k{color:#A9E0B5}.v-tam .btn{font-family:var(--display);font-weight:700;font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;background:var(--tam);color:var(--negro);border:0;padding:14px 24px;cursor:pointer;transition:.16s}.v-tam .btn:hover:not(:disabled){background:var(--arena)}.v-tam .btn:disabled{opacity:.35;cursor:default}.v-tam .btn.ghost{background:transparent;border:1px solid var(--linea-osc);color:var(--arena)}.v-tam .navrow{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:24px}.v-tam .msg{font-family:var(--display);font-weight:500;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--tam)}.v-tam .field{margin-top:18px}.v-tam .field label{display:block;font-size:14px;color:rgba(251,249,240,.7);margin-bottom:7px}.v-tam .field input,.v-tam .field textarea{width:100%;background:transparent;border:1px solid var(--linea-osc);color:var(--arena);font-family:var(--body);font-size:15.5px;padding:12px 14px;line-height:1.5;resize:vertical}.v-tam .field input:focus,.v-tam .field textarea:focus{border-color:var(--tam);outline:none}
+
+/* banco */.v-tam .siguiente{border-top:1px solid var(--linea-osc);margin-top:30px;padding-top:24px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}.v-tam .siguiente .txt{font-family:var(--display);font-weight:700;font-size:clamp(16px,2vw,20px);line-height:1.2}.v-tam .benchnav{display:flex;gap:8px;flex-wrap:wrap;margin-top:34px}.v-tam .benchtab{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.05em;background:transparent;border:1px solid var(--linea-osc);color:rgba(251,249,240,.65);padding:12px 18px;cursor:pointer;transition:.16s;display:flex;gap:9px;align-items:center}.v-tam .benchtab:hover{border-color:var(--tam)}.v-tam .benchtab[aria-selected="true"]{background:var(--tam);border-color:var(--tam);color:var(--negro)}.v-tam .benchtab .tick{font-size:13px;opacity:.35}.v-tam .benchtab.done .tick{opacity:1;color:var(--verde)}.v-tam .benchtab[aria-selected="true"].done .tick{color:var(--negro)}.v-tam .bench{border:1px solid var(--linea-osc);background:var(--negro-2);margin-top:20px;padding:clamp(22px,3.4vw,36px)}.v-tam .bench .task{border-left:2px solid var(--tam);padding-left:20px;margin-bottom:28px}.v-tam .bench .task .k{font-family:var(--display);font-weight:500;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--tam);display:block;margin-bottom:9px}.v-tam .bench .task p{margin:0;font-size:16.5px;line-height:1.5;color:var(--arena)}.v-tam .bench h3{font-size:clamp(21px,3vw,30px);margin-bottom:14px}.v-tam .prompts{display:grid;gap:10px}.v-tam .promptbtn{text-align:left;background:transparent;border:1px solid var(--linea-osc);color:var(--arena);padding:16px 18px;cursor:pointer;transition:.16s;font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;font-size:14.5px;line-height:1.5}.v-tam .promptbtn:hover{border-color:var(--tam)}.v-tam .promptbtn[aria-pressed="true"]{border-color:var(--tam);background:rgba(155,111,212,.14)}.v-tam .promptbtn .tagp{display:block;font-family:var(--display);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--tam);margin-bottom:8px}.v-tam .out{margin-top:22px;border:1px solid var(--linea-osc);display:none}.v-tam .out.show{display:block;animation:tam-rise .35s ease}.v-tam .out .oh{display:flex;align-items:center;gap:10px;padding:12px 18px;border-bottom:1px solid var(--linea-osc);font-family:var(--display);font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:rgba(251,249,240,.5)}.v-tam .out .oh .dotm{width:8px;height:8px;border-radius:50%;background:var(--tam)}.v-tam .out .ob{padding:20px 18px;font-size:15.5px;line-height:1.6;color:rgba(251,249,240,.85)}.v-tam .out .ob ul{margin:8px 0 0;padding-left:18px}.v-tam .verdict{padding:16px 18px;border-top:1px solid var(--linea-osc);font-size:15px;line-height:1.55}.v-tam .verdict.bad{background:rgba(180,85,63,.13);color:#F0B6A6}.v-tam .verdict.good{background:rgba(59,172,82,.14);color:#A9E0B5}.v-tam .doc{border:1px solid var(--linea-osc);padding:22px;font-size:16px;line-height:1.85}.v-tam .sent{cursor:pointer;padding:2px 3px;border-bottom:1px dashed rgba(251,249,240,.28);transition:.16s;color:rgba(251,249,240,.88)}.v-tam .sent:hover{background:rgba(155,111,212,.16)}.v-tam .sent.flag{background:rgba(155,111,212,.28)}.v-tam .sent.right{background:rgba(59,172,82,.2);border-bottom:1px solid var(--verde)}.v-tam .sent.wrong{background:rgba(180,85,63,.2);border-bottom:1px solid #B4553F}.v-tam .sent.missed{background:rgba(223,223,63,.18);border-bottom:1px solid var(--pregrado)}.v-tam .whylist{margin-top:20px;display:none}.v-tam .whylist.show{display:block;animation:tam-rise .35s ease}.v-tam .whylist ul{margin:0;padding:0}.v-tam .whylist li{margin-bottom:12px;font-size:15px;line-height:1.55;color:rgba(251,249,240,.8);list-style:none;padding-left:16px;border-left:2px solid var(--tam)}.v-tam .legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:16px;font-size:13px;color:rgba(251,249,240,.55)}.v-tam .legend i{display:inline-block;width:11px;height:11px;margin-right:6px;vertical-align:-1px}.v-tam .paths{display:grid;gap:10px}.v-tam .pathbtn{text-align:left;background:transparent;border:1px solid var(--linea-osc);color:var(--arena);padding:16px 18px;cursor:pointer;transition:.16s;font-size:15.5px;line-height:1.45}.v-tam .pathbtn:hover{border-color:var(--tam)}.v-tam .pathbtn[aria-pressed="true"]{border-color:var(--tam);background:rgba(155,111,212,.14)}.v-tam .consec{margin-top:20px;display:none;border-left:2px solid var(--tam);padding-left:20px}.v-tam .consec.show{display:block;animation:tam-rise .35s ease}.v-tam .consec .k{font-family:var(--display);font-weight:500;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--tam);display:block;margin-bottom:9px}.v-tam .consec p{font-size:16px;line-height:1.55;color:rgba(251,249,240,.85);margin:0 0 .8em}.v-tam .cierre-banco{margin-top:32px;border:1px solid var(--linea-osc);background:var(--negro);padding:clamp(22px,3.2vw,32px);display:none}.v-tam .cierre-banco.show{display:block;animation:tam-rise .4s ease}.v-tam .maplist{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:1px;background:var(--linea-osc);border:1px solid var(--linea-osc)}.v-tam .maplist li{background:var(--negro-2);display:grid;grid-template-columns:170px 1fr;gap:18px;padding:14px 18px;align-items:baseline;font-size:15px}.v-tam .maplist b{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.11em;text-transform:uppercase;color:var(--tam)}.v-tam .maplist span{color:rgba(251,249,240,.8)}
+
+/* nivelador */.v-tam .track-switch{display:flex;gap:8px;margin-bottom:26px;flex-wrap:wrap}.v-tam .track-switch button{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.08em;text-transform:uppercase;background:transparent;border:1px solid var(--linea-osc);color:rgba(251,249,240,.7);padding:11px 20px;cursor:pointer;border-radius:100px;transition:.16s}.v-tam .track-switch button[aria-pressed="true"]{color:var(--negro);border-color:transparent}.v-tam .track-switch button[data-track="pregrado"][aria-pressed="true"]{background:var(--pregrado)}.v-tam .track-switch button[data-track="posgrado"][aria-pressed="true"]{background:var(--posgrado)}.v-tam .rail-line{height:2px;background:var(--linea-osc);position:relative}.v-tam .rail-fill{position:absolute;left:0;top:0;height:2px;background:var(--acc,var(--tam));transition:width .34s cubic-bezier(.4,.1,.2,1)}.v-tam .stops{display:grid;grid-template-columns:repeat(4,1fr);margin-top:-9px}.v-tam .stop{background:none;border:0;padding:0;cursor:pointer;text-align:left}.v-tam .stop .dot{width:16px;height:16px;border-radius:50%;background:var(--negro);border:2px solid var(--linea-osc);display:block;transition:.2s}.v-tam .stop .lbl{display:block;margin-top:14px;font-family:var(--display);font-weight:700;font-size:clamp(13px,1.6vw,17px);color:rgba(251,249,240,.45);transition:.2s}.v-tam .stop[aria-pressed="true"] .dot{background:var(--acc,var(--tam));border-color:var(--acc,var(--tam));transform:scale(1.25)}.v-tam .stop[aria-pressed="true"] .lbl{color:var(--arena)}.v-tam .stop:last-child{text-align:right}.v-tam .stop:last-child .dot{margin-left:auto}.v-tam .equiv{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3px;margin-top:38px}.v-tam .equiv span{display:block;text-align:center;font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.11em;text-transform:uppercase;padding:9px 6px;color:rgba(251,249,240,.4);border:1px solid var(--linea-osc);transition:.22s}.v-tam .equiv span.on{color:var(--negro);background:var(--acc,var(--tam));border-color:transparent}.v-tam .equivnote{margin-top:14px;font-size:14px;line-height:1.55;color:rgba(251,249,240,.6);max-width:78ch}.v-tam .equivnote strong{color:rgba(251,249,240,.9);font-weight:600}.v-tam .panel4{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:1px;background:var(--linea-osc);border:1px solid var(--linea-osc);margin-top:40px}.v-tam .panel4 .c{background:var(--negro);padding:24px 20px 28px}.v-tam .panel4 .c:last-child{background:var(--negro-2)}.v-tam .panel4 h4{font-family:var(--display);font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--acc,var(--tam));margin-bottom:12px}.v-tam .panel4 p{font-size:15px;line-height:1.55;color:rgba(251,249,240,.82);margin:0}.v-tam .fade-swap{animation:tam-rise .32s ease}.v-tam .contrast{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--linea);border:1px solid var(--linea);margin-top:30px}.v-tam .contrast > div{background:var(--arena);padding:26px 24px 30px}.v-tam .contrast h3{font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-family:var(--display);font-weight:500;margin-bottom:14px}.v-tam .contrast .no h3{color:#B4553F}.v-tam .contrast .si h3{color:var(--verde-osc)}.v-tam .contrast ul{margin:0;padding-left:18px}.v-tam .contrast li{margin-bottom:9px;font-size:15.5px}.v-tam .marcos{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:32px}.v-tam .marco{border:1px solid var(--linea);border-top:3px solid var(--tam-osc);padding:24px 22px;background:var(--blanco)}.v-tam .marco h3{font-size:18px;margin-bottom:5px}.v-tam .marco .who{font-size:12.5px;font-family:var(--display);letter-spacing:.06em;text-transform:uppercase;color:var(--gris);margin-bottom:13px;display:block}.v-tam .marco p{font-size:15px;color:var(--gris);margin:0}.v-tam .closing{font-family:var(--display);font-weight:700;font-size:clamp(25px,4.4vw,48px);line-height:1.07;max-width:23ch}.v-tam .closing em{font-style:normal;color:var(--tam)}@media (max-width:860px){.v-tam .contrast,.v-tam .triada{grid-template-columns:1fr}.v-tam .maplist li,.v-tam .ficha dl{grid-template-columns:1fr}.v-tam .ficha dt{padding-bottom:0;border-top:1px solid var(--linea-osc)}.v-tam .ficha dd{padding-top:4px;border-top:0}.v-tam .stop .lbl{font-size:13px}
+}@media (prefers-reduced-motion:reduce){.v-tam *{animation:none!important;transition:none!important}.v-tam{scroll-behavior:auto}}
+
+.v-tam #tam-niveles{--acc:var(--pregrado)}
+.v-tam{--comp-acc:#533278;--comp-acc-cl:#9B6FD4}
+
+</style>
+</head>
+<body>
+
+<nav class="hub-bar" id="hubBar" aria-label="Navegación">
+  <div class="wrap">
+    <span class="hub-marca" id="hubMarca">Nuevo Modelo Educativo</span>
+    <button class="hub-volver" id="hubVolver" type="button">Las tres competencias</button>
+    <img class="hub-logo" src="data:image/png;base64,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" alt="Universidad EAN">
+  </div>
+</nav>
+
+<header class="portada visible" id="portada">
+  <div class="wrap">
+    <span class="kicker">Universidad EAN · 2026</span>
+    <h1>Tres competencias.<br>Un solo modelo.</h1>
+    <p class="bajada">El Modelo Educativo EAN 2026 organiza la experiencia formativa en torno a tres competencias que se integran a lo largo de todo el recorrido. No se aprenden por separado porque en la vida real no se usan por separado. Elige por dónde empezar.</p>
+    <p class="formula-hub">(<b class="a">Emprendimiento Sostenible</b> &times; <b class="b">Poder Humano</b>) <sup>Tech AI Maker</sup> = Abundancia para la humanidad</p>
+    <div class="tarjetas"><button class="tarjeta" type="button" data-ir="es" style="--c:#6FD183"><span class="n">Competencia 01</span><h2>Emprendimiento Sostenible</h2><p>Construye procesos emprendedores e innovadores para crear o transformar organizaciones y entornos hacia la sostenibilidad, generando valor en contextos diversos e inciertos.</p><span class="ir">Entrar</span></button><button class="tarjeta" type="button" data-ir="ph" style="--c:#00C0B3"><span class="n">Competencia 02</span><h2>Poder Humano</h2><p>Liderar con conciencia, comprender a otros, diseñar entornos de bienestar y cooperar para construir soluciones más humanas, inclusivas y sostenibles.</p><span class="ir">Entrar</span></button><button class="tarjeta" type="button" data-ir="tam" style="--c:#9B6FD4"><span class="n">Competencia 03</span><h2>Tech AI Maker</h2><p>Utilizar, diseñar y promover soluciones potenciadas por tecnología, con pensamiento crítico, criterio ético e innovación, para generar valor con impacto positivo.</p><span class="ir">Entrar</span></button></div>
+    <div class="nota-talleres">
+      <span class="k">Los talleres</span>
+      <p>Cada competencia tiene además un taller práctico que vive en una pieza aparte: <strong>El taller del emprendedor</strong>, la <strong>Carrera de observación</strong> y <strong>Los dos talleres de Tech AI Maker</strong>. Aquí encuentras el marco conceptual; allá se pone a prueba.</p>
+    </div>
+  </div>
+</header>
+
+<div class="view v-es" id="v-es"><header class="hero">
+  <div class="wrap">
+    <span class="hero-tag">Competencia institucional · 01 de 03</span>
+    <h1>Emprendimiento<br><em>Sostenible</em></h1>
+    <p class="hero-def">Construye procesos emprendedores e innovadores para crear o transformar organizaciones y entornos hacia la sostenibilidad, generando valor en contextos diversos e inciertos.</p>
+    <p class="hero-sub">No es una asignatura de emprendimiento. Y no se enseña explicándola: se enseña poniendo a alguien a decidir sin información completa, con recursos que no alcanzan y con alguien afuera esperando un resultado. Eso es lo que hace el taller de esta pieza, y lo vas a jugar tú antes de pedírselo a un estudiante.</p>
+    <p class="formula">(<b>Emprendimiento Sostenible</b> × Poder Humano) <sup>Tech AI Maker</sup> = Abundancia para la humanidad</p>
+  </div>
+</header>
+
+<!-- 01 -->
+<section id="es-evolucion">
+  <div class="wrap">
+    <span class="eyebrow">01 · La evolución de la competencia</span>
+    <h2 class="h2">Cambió el verbo. Y con el verbo, cambió lo que evalúas.</h2>
+    <p class="lead">La formulación anterior pedía descubrir, validar e implementar. La actual pide construir y transformar. No es un ajuste de redacción: mueve el nivel de desempeño, el objeto de la acción y la forma de medirlo.</p>
+    <div class="switchrow" role="tablist" aria-label="Versiones" style="margin-top:34px">
+      <button class="pill" role="tab" aria-selected="false" data-ver="antes">Formulación anterior</button>
+      <button class="pill" role="tab" aria-selected="true" data-ver="ahora">Formulación 2026</button>
+    </div>
+    <div class="versionbox">
+      <p class="stmt" id="es-verStmt"></p>
+      <dl class="deltas" id="es-verDeltas"></dl>
+    </div>
+    <p class="hintline" style="margin-top:18px;max-width:78ch">Es posible que encuentres la variante «<em>Lidera</em> procesos emprendedores e innovadores…» en otros recursos institucionales: es la propuesta que salió del comparativo. El enunciado vigente, el del Modelo Educativo 2026 y el Brand Book, es <strong>Construye</strong>.</p>
+  </div>
+</section>
+
+<!-- 02 -->
+<section class="dark">
+  <div class="wrap">
+    <span class="eyebrow">02 · Qué integra</span>
+    <h2 class="h2">Cuatro cosas que ya no van por separado.</h2>
+    <p class="lead">Si una falta, lo que queda es un proyecto de clase, no emprendimiento sostenible.</p>
+    <div class="grid4">
+      <div class="cell"><span class="idx">01</span><h3>Liderazgo transformador</h3><p>Movilizar recursos, personas y procesos. La acción deja de ser individual y pasa a organizar a otros.</p></div>
+      <div class="cell"><span class="idx">02</span><h3>Innovación como eje</h3><p>Estructural, no complementaria. No es un plus del proyecto: es la condición para que exista.</p></div>
+      <div class="cell"><span class="idx">03</span><h3>Sostenibilidad orientadora</h3><p>Dimensiones económica, social y ambiental dentro de la decisión, no en el capítulo final.</p></div>
+      <div class="cell"><span class="idx">04</span><h3>Acción en incertidumbre</h3><p>Contextos diversos e inciertos. Se actúa sin condiciones ideales, que es como se actúa afuera.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 -->
+<section id="es-motor">
+  <div class="wrap">
+    <span class="eyebrow">03 · Cómo está construida</span>
+    <h2 class="h2">Un doble motor: cómo piensa y qué hace.</h2>
+    <p class="lead">El <strong>mindset</strong> orienta la acción; la <strong>acción</strong> consolida el aprendizaje. Toca un componente y verás con qué elemento práctico se materializa.</p>
+    <div class="motor">
+      <div class="col"><h3>Mindset emprendedor · dimensión actitudinal</h3><ul class="itemlist" id="es-mindsetList"></ul></div>
+      <div class="col"><h3>Acción emprendedora · dimensión práctica</h3><ul class="itemlist" id="es-accionList"></ul></div>
+    </div>
+    <div class="linkpanel" id="es-linkPanel" aria-live="polite">
+      <span class="k">Por qué se necesitan juntos</span>
+      <p id="es-linkText">Selecciona un componente del mindset para ver cómo se traduce en acción observable.</p>
+    </div>
+    <div class="bridge">
+      <span class="eyebrow">Y así es como se evalúa</span>
+      <p style="max-width:66ch;margin-bottom:20px">Los cinco criterios con los que vas a valorar la evidencia son, casi uno a uno, esta dimensión práctica.</p>
+      <ul class="bridgelist">
+        <li><b>Lectura del entorno</b><span>Lectura estratégica del entorno</span></li>
+        <li><b>Acción e innovación</b><span>Identificación y resolución de problemas complejos</span></li>
+        <li><b>Sostenibilidad y valor</b><span>Medición de resultados e impacto</span></li>
+        <li><b>Colaboración y comunicación</b><span>Interacción con actores diversos · Comunicación y negociación · Equipos interdisciplinarios</span></li>
+        <li><b>Aprendizaje del error</b><span>Mindset C4 · Aprendizaje a partir del error</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 04 -->
+<section id="es-componentes">
+  <div class="wrap">
+    <span class="eyebrow">04 · Los componentes, uno por uno</span>
+    <h2 class="h2">Siete componentes. Dos alcances.</h2>
+    <p class="lead">La letra fina que necesitas para redactar un resultado de aprendizaje que no se quede en el verbo.</p>
+    <div class="fichas" id="es-fichas"></div>
+    <p class="hintline" style="margin-top:22px">El componente C7 aparece listado en el Modelo Educativo pero aún no tiene ficha desarrollada. La versión que ves se completó siguiendo la lógica de C1 a C6 y está marcada como propuesta.</p>
+  </div>
+</section>
+
+<!-- 05 · NIVELES -->
+<section id="es-niveles" class="dark">
+  <div class="wrap">
+    <span class="eyebrow">05 · Desarrollo progresivo</span>
+    <h2 class="h2">Mueve el nivel y mira qué cambia.</h2>
+    <p class="lead">Elige el trayecto, desplázate por los niveles y observa cómo se mueven el Ser, el Saber, el Saber Hacer y el resultado de aprendizaje.</p>
+    <div style="margin-top:34px">
+      <div class="track-switch" role="group" aria-label="Trayecto formativo">
+        <button data-track="pregrado" aria-pressed="true">Pregrado</button>
+        <button data-track="posgrado" aria-pressed="false">Posgrado</button>
+      </div>
+      <div class="rail"><div class="rail-line"><div class="rail-fill" id="es-railFill"></div></div><div class="stops" id="es-stops"></div></div>
+      <div class="equiv" id="es-equiv" aria-hidden="true"></div>
+      <p class="equivnote">Los cuatro niveles curriculares corresponden a tres niveles de logro: Inicial y Básico se agrupan en <strong>Explorador</strong>, Intermedio es <strong>Implementador</strong> y Avanzado es <strong>Transformador</strong>. Son los mismos de la rúbrica del recurso de diseño de actividades.</p>
+      <div class="panel4" id="es-panel4"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 · TALLER -->
+
+
+<!-- 07 -->
+<section id="es-teoria">
+  <div class="wrap">
+    <span class="eyebrow">07 · El sustento</span>
+    <h2 class="h2">De dónde viene esto.</h2>
+    <p class="lead">La competencia no se inventó en una reunión. Y el taller que acabas de correr tampoco: cada ejercicio sale de uno de estos marcos.</p>
+    <div class="marcos">
+      <div class="marco"><h3>Effectuation</h3><span class="who">Sarasvathy · 2008</span><p>Quien emprende no parte de una meta fija: parte de los medios que tiene —quién es, qué sabe, a quién conoce—, se adapta y co-crea la oportunidad. Es el ejercicio 01, literal.</p></div>
+      <div class="marco"><h3>ET&amp;A</h3><span class="who">Neck, Greene &amp; Brush · Babson</span><p>El emprendimiento es una práctica, no un cuerpo teórico. Actuar, aprender, construir. Por eso el reto va antes que el contenido, y por eso el ejercicio 03 se juega en vez de leerse.</p></div>
+      <div class="marco"><h3>EntreComp</h3><span class="who">Comisión Europea · 2016</span><p>Actuar sobre oportunidades e ideas para crear valor para otros. Sus tres áreas —ideas y oportunidades, recursos, hacia la acción— están las tres en la formulación EAN.</p></div>
+      <div class="marco"><h3>Valor compartido</h3><span class="who">Drucker · Porter &amp; Kramer</span><p>La innovación es requisito de la creación de valor y la sostenibilidad es principio ético y operativo. El resultado se mide en valor económico, social y ambiental.</p></div>
+      <div class="marco"><h3>ODS</h3><span class="who">Naciones Unidas</span><p>La competencia aporta de forma directa a los ODS 4, 8, 9, 12 y 13. Es el lenguaje con el que las organizaciones aliadas leen el impacto de lo que producen tus estudiantes.</p></div>
+      <div class="marco"><h3>Green Entrepreneurship</h3><span class="who">OCDE</span><p>Innovación con impacto positivo y responsabilidad a lo largo de toda la cadena de valor. Sirve para exigir alcance sistémico en los retos, no solo una solución puntual.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 -->
+<section class="dark">
+  <div class="wrap">
+    <span class="eyebrow">08 · Qué produce</span>
+    <h2 class="h2">Lo que se lleva el estudiante. Lo que recibe el entorno.</h2>
+    <div class="twocol">
+      <div>
+        <h3 style="font-family:var(--display);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--verde-cl);margin-bottom:10px">En el graduado</h3>
+        <ul class="tick">
+          <li>Lidera procesos de innovación en contextos complejos.</li>
+          <li>Crea y transforma organizaciones con enfoque sostenible.</li>
+          <li>Genera soluciones a problemáticas reales.</li>
+          <li>Actúa con ética, responsabilidad y visión sistémica.</li>
+          <li>Integra tecnología en la creación de valor.</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-family:var(--display);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--verde-cl);margin-bottom:10px">En el entorno</h3>
+        <ul class="tick">
+          <li>Organizaciones más innovadoras y sostenibles.</li>
+          <li>Ecosistemas productivos más resilientes.</li>
+          <li>Contribución efectiva a los Objetivos de Desarrollo Sostenible.</li>
+          <li>Impacto económico, social y ambiental verificable.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="closing">Tu huella no está en lo que enseñas. Está en <em>los retos que diseñas</em>.</p>
+  </div>
+</section><section class="bloque-taller"><div class="wrap"><div class="caja"><span class="k">El taller de esta competencia</span><h3>El taller del emprendedor</h3><p>Tres ejercicios encadenados: tu inventario de medios, el detector de retos y un semestre completo en seis movidas. Vive en una pieza aparte.</p></div></div></section></div><div class="view v-ph" id="v-ph"><header class="hero">
+  <div class="wrap">
+    <span class="hero-tag">Competencia institucional · 02 de 03</span>
+    <h1>Poder<br><em>Humano</em></h1>
+    <p class="hero-def">Liderar con conciencia, comprender a otros, diseñar entornos de bienestar, actuar con empatía y cooperar para construir soluciones más humanas, inclusivas y sostenibles.</p>
+    <p class="hero-sub">Esto no se enseña con una diapositiva sobre valores. Se enseña cuando alguien tiene que escuchar antes de decidir, comprender antes de juzgar y fallar antes de mejorar. Por eso lo que sigue no es un módulo: es una carrera de observación de seis estaciones. Cada una está cerrada hasta que resuelvas su pista.</p>
+    <p class="formula">(Emprendimiento Sostenible × <b>Poder Humano</b>) <sup>Tech AI Maker</sup> = Abundancia para la humanidad</p>
+  </div>
+</header>
+
+<!-- ============ 01 · QUÉ ES ============ -->
+<section id="ph-que-es">
+  <div class="wrap">
+    <span class="eyebrow">01 · La competencia</span>
+    <h2 class="h2">Repertorios verificables. No rasgos de personalidad.</h2>
+    <p class="lead">El Modelo Educativo define Poder Humano como comportamiento observable, medible y transferible. Eso cambia todo para ti: si es observable, se puede diseñar, entrenar y evaluar. Si fuera un valor abstracto, solo se podría declarar.</p>
+
+    <div class="switchrow" role="tablist" aria-label="Nivel de formación">
+      <button class="pill" role="tab" aria-selected="true" data-def="pre">En pregrado</button>
+      <button class="pill" role="tab" aria-selected="false" data-def="pos">En posgrado</button>
+    </div>
+    <div class="defbox">
+      <p id="ph-defText"></p>
+      <p class="mindset-note" id="ph-defNote"></p>
+    </div>
+
+    <div class="contrast">
+      <div class="no">
+        <h3>Lo que Poder Humano no es</h3>
+        <ul>
+          <li>Un taller de habilidades blandas al margen del contenido disciplinar.</li>
+          <li>Una lista de valores que se evalúa con una encuesta de percepción.</li>
+          <li>Bajar la exigencia académica para ser comprensivo con el estudiante.</li>
+          <li>Un rasgo con el que se nace y que unos tienen y otros no.</li>
+        </ul>
+      </div>
+      <div class="si">
+        <h3>Lo que sí es</h3>
+        <ul>
+          <li>Un repertorio aprendido: se entrena con ejemplares múltiples y se generaliza.</li>
+          <li>Evidencia observable: qué hizo el estudiante, en qué contexto y con qué efecto.</li>
+          <li>Comprender las condiciones desde las cuales cada estudiante intenta alcanzar el estándar.</li>
+          <li>Una capacidad que se diseña en tu unidad de estudio, con tu contenido.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 · CAPACIDADES ============ -->
+<section id="ph-capacidades">
+  <div class="wrap">
+    <span class="eyebrow">02 · Las cuatro capacidades institucionales</span>
+    <h2 class="h2">Cuatro repertorios. Dos alcances.</h2>
+    <p class="lead">Estas son las capacidades que estructuran la competencia en el Modelo. Las seis estaciones de la carrera son la forma de vivirlas; estas cuatro fichas son la forma de redactarlas en tu programa.</p>
+    <div class="fichas" id="ph-fichas"></div>
+  </div>
+</section>
+
+<!-- ============ 03 · LA CARRERA (firma) ============ -->
+
+
+<!-- ============ 04 · NIVELES ============ -->
+<section id="ph-niveles" class="dark">
+  <div class="wrap">
+    <span class="eyebrow">04 · Desarrollo progresivo</span>
+    <h2 class="h2">Mueve el nivel y mira qué cambia.</h2>
+    <p class="lead">La misma competencia no se evalúa igual en primer semestre que en una maestría. Elige el trayecto, desplázate por los niveles y observa el Ser, el Saber, el Saber Hacer y el resultado de aprendizaje.</p>
+    <div style="margin-top:34px">
+      <div class="track-switch" role="group" aria-label="Trayecto formativo">
+        <button data-track="pregrado" aria-pressed="true">Pregrado · Human-Ready</button>
+        <button data-track="posgrado" aria-pressed="false">Posgrado · Human-Driven</button>
+      </div>
+      <div class="rail">
+        <div class="rail-line"><div class="rail-fill" id="ph-railFill"></div></div>
+        <div class="stops" id="ph-stops"></div>
+      </div>
+      <div class="panel4" id="ph-panel4"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 · COMPARATIVA ============ -->
+<section id="ph-comparativa">
+  <div class="wrap">
+    <span class="eyebrow">05 · Human-Ready y Human-Driven</span>
+    <h2 class="h2">Dos mentalidades, una competencia.</h2>
+    <p class="lead">Pregrado transita de reconocimiento a transferencia. Posgrado, de diagnóstico a transformación sistémica verificable. Si diseñas para el nivel equivocado, la actividad se siente floja o imposible.</p>
+    <table class="cmp">
+      <thead><tr><th>Dimensión</th><th>Pregrado · Human-Ready</th><th>Posgrado · Human-Driven</th></tr></thead>
+      <tbody>
+        <tr><td>Rol</td><td>Comprensión y aplicación en contextos próximos</td><td>Diseño estratégico y liderazgo organizacional</td></tr>
+        <tr><td>Núcleo</td><td>Comportamiento propio e interpersonal</td><td>Entornos, sistemas y organizaciones</td></tr>
+        <tr><td>Tipo de impacto</td><td>Relacional e interpersonal</td><td>Organizacional y sistémico</td></tr>
+        <tr><td>Complejidad</td><td>Ejemplares concretos y variados, generalización inicial</td><td>Logro conceptual avanzado y transferencia estratégica</td></tr>
+        <tr><td>Liderazgo</td><td>Estrategias para equipos pequeños</td><td>Sistemas institucionales y liderazgo a escala</td></tr>
+        <tr><td>Diseño humanizado</td><td>Aplicación del DUA y Humanise en productos y experiencias</td><td>Institucionalización del DUA y Humanise en políticas</td></tr>
+        <tr><td>Ruta formativa</td><td>Reconocimiento → Aprendizaje → Aplicación → Transferencia</td><td>Diagnóstico → Diseño → Implementación → Transformación</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ============ 06 · MAPA ============ -->
+
+
+<section class="dark">
+  <div class="wrap">
+    <p class="closing">Aprender con Poder Humano es convertir cada decisión disciplinar en una <em>acción consciente, empática y transformadora</em>.</p>
+  </div>
+</section><section class="bloque-taller"><div class="wrap"><div class="caja"><span class="k">El taller de esta competencia</span><h3>Carrera de observación</h3><p>Seis laboratorios de la EAN, seis retos que se resuelven y un Mapa de Aplicación al final. Vive en una pieza aparte.</p></div></div></section></div><div class="view v-tam" id="v-tam"><header class="hero">
+  <div class="wrap">
+    <span class="hero-tag">Competencia institucional · 03 de 03</span>
+    <h1>Tech AI<br><em>Maker</em></h1>
+    <p class="hero-def">Utiliza, diseña y promueve soluciones potenciadas por tecnología, integrando pensamiento crítico, criterio ético, innovación y visión estratégica para generar conocimiento, crear valor y promover transformaciones con impacto positivo.</p>
+    <p class="hero-sub">El nombre engaña si te quedas en la sigla del medio. El Modelo habla de la inteligencia artificial <em>y de otras tecnologías emergentes</em>, y le pone al lado una palabra que suele pasar desapercibida: <strong>Maker</strong>. Aprender creando. Construir, probar, romper y volver a construir. Por eso aquí hay dos talleres: uno donde fabricas y otro donde desconfías.</p>
+    <p class="formula">(Emprendimiento Sostenible × Poder Humano) <sup>Tech AI Maker</sup> = Abundancia para la humanidad</p>
+  </div>
+</header>
+
+<!-- 01 -->
+<section id="tam-que-es">
+  <div class="wrap">
+    <span class="eyebrow">01 · Tres palabras, tres ideas</span>
+    <h2 class="h2">No es una competencia de inteligencia artificial.</h2>
+    <p class="lead">Es una competencia sobre crear con tecnología y sostener el juicio profesional mientras lo haces. Toca cada palabra.</p>
+
+    <div class="triada" id="tam-triada" role="group" aria-label="Las tres palabras"></div>
+    <div class="tribody" id="tam-tribody"></div>
+
+    <div class="switchrow" role="tablist" aria-label="Nivel de formación">
+      <button class="pill" role="tab" aria-selected="true" data-def="pre">Definición en pregrado</button>
+      <button class="pill" role="tab" aria-selected="false" data-def="pos">Definición en posgrado</button>
+    </div>
+    <div class="defbox">
+      <p class="st" id="tam-defText"></p>
+      <p class="note" id="tam-defNote"></p>
+    </div>
+  </div>
+</section>
+
+<!-- 02 · MAKER -->
+<section id="tam-maker" class="dark">
+  <div class="wrap">
+    <span class="eyebrow">02 · Cultura Maker</span>
+    <h2 class="h2">Aprender creando.</h2>
+    <p class="lead">El Modelo la define como la mitad práctica de esta competencia: el aprendizaje adquiere significado cuando el estudiante diseña, experimenta, construye, prueba y mejora soluciones frente a desafíos auténticos. Y aclara algo que conviene subrayar: trasciende los espacios físicos especializados. No necesitas un FabLab para que ocurra en tu clase.</p>
+
+    <div class="momentos">
+      <div class="mom"><span class="n">Momento 01</span><h3>Exploración</h3><p>La tecnología facilita el acceso a información y el análisis de datos. El Poder Humano orienta la lectura crítica del contexto. La Cultura Maker estimula la curiosidad y la experimentación inicial.</p></div>
+      <div class="mom"><span class="n">Momento 02</span><h3>Profundización</h3><p>El estudiante integra conocimiento disciplinar, herramientas tecnológicas y trabajo colaborativo para diseñar y prototipar. Las tres competencias se fortalecen al mismo tiempo, no por turnos.</p></div>
+      <div class="mom"><span class="n">Momento 03</span><h3>Enfoque e impacto</h3><p>La solución se valida en contexto real. Tecnología, emprendimiento y liderazgo humano convergen en acciones que generan valor para organizaciones, comunidades y territorios.</p></div>
+    </div>
+
+    <div class="errorbox">
+      <p>«En este contexto, equivocarse hace parte del aprendizaje.» Está en el Modelo, literal. Si tu diseño no deja espacio para una segunda versión, no hay cultura Maker: hay entrega.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 03 · CAPACIDADES -->
+<section id="tam-capacidades" class="dark">
+  <div class="wrap">
+    <span class="eyebrow">03 · Estructura de la competencia</span>
+    <h2 class="h2">Seis capacidades. Dos mentalidades.</h2>
+    <p class="lead">La misma competencia se organiza distinto según el trayecto. Baja la palanca y mira cómo se transforma: en pregrado se apropia, en posgrado se gobierna.</p>
+    <div style="margin-top:34px">
+      <div class="lever" role="group" aria-label="Mentalidad">
+        <button data-mind="ready" aria-pressed="true">AI-Ready · Pregrado</button>
+        <button data-mind="driven" aria-pressed="false">AI-Driven · Posgrado</button>
+      </div>
+      <div class="capgrid" id="tam-capGrid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 04 · MESA DE TRABAJO -->
+
+
+<!-- 05 · BANCO -->
+
+
+<!-- 06 · NIVELES -->
+<section id="tam-niveles" class="dark">
+  <div class="wrap">
+    <span class="eyebrow">06 · Desarrollo progresivo</span>
+    <h2 class="h2">Mueve el nivel y mira qué cambia.</h2>
+    <p class="lead">De usar la tecnología para organizar ideas a liderar ecosistemas de innovación. Elige el trayecto y desplázate por los niveles.</p>
+    <div style="margin-top:34px">
+      <div class="track-switch" role="group" aria-label="Trayecto formativo">
+        <button data-track="pregrado" aria-pressed="true">Pregrado · AI-Ready</button>
+        <button data-track="posgrado" aria-pressed="false">Posgrado · AI-Driven</button>
+      </div>
+      <div class="rail">
+        <div class="rail-line"><div class="rail-fill" id="tam-railFill"></div></div>
+        <div class="stops" id="tam-stops"></div>
+      </div>
+      <div class="equiv" id="tam-equiv" aria-hidden="true"></div>
+      <p class="equivnote">Los cuatro niveles curriculares corresponden a tres niveles de logro: Inicial y Básico se agrupan en <strong>Explorador</strong>, Intermedio es <strong>Implementador</strong> y Avanzado es <strong>Transformador</strong>. Son los mismos que usan las otras dos competencias del modelo.</p>
+      <div class="panel4" id="tam-panel4"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 -->
+<section id="tam-marcos">
+  <div class="wrap">
+    <span class="eyebrow">07 · El sustento</span>
+    <h2 class="h2">De dónde viene esto.</h2>
+
+    <div class="contrast">
+      <div class="no">
+        <h3>Lo que Tech AI Maker no es</h3>
+        <ul>
+          <li>Un curso de herramientas que quedará obsoleto en un semestre.</li>
+          <li>Solo inteligencia artificial: el Modelo dice IA <em>y otras tecnologías emergentes</em>.</li>
+          <li>Prohibirla y diseñar evaluaciones para detectarla.</li>
+          <li>Un entregable único, sin espacio para una segunda versión.</li>
+          <li>Un FabLab. La cultura Maker trasciende los espacios físicos.</li>
+        </ul>
+      </div>
+      <div class="si">
+        <h3>Lo que sí es</h3>
+        <ul>
+          <li>Trabajar con tecnologías emergentes sin delegar en ellas el juicio profesional.</li>
+          <li>Aprender creando: diseñar, experimentar, construir, probar y mejorar.</li>
+          <li>Diseñar evidencias donde el criterio del estudiante tenga que aparecer.</li>
+          <li>Iterar: la primera versión existe para producir información.</li>
+          <li>Construir identidad de creador tecnológico responsable, no de usuario.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="marcos">
+      <div class="marco"><h3>Learning by making</h3><span class="who">Papert · Blikstein</span><p>El conocimiento se construye cuando la persona fabrica algo que existe fuera de su cabeza y otros pueden ver. De ahí el prototipado desde las primeras etapas de la formación.</p></div>
+      <div class="marco"><h3>Aprendizaje experiencial</h3><span class="who">Kolb</span><p>Experiencia, reflexión, conceptualización y nueva experimentación. Es el ciclo que sostiene la iteración: probar no cierra el aprendizaje, lo reinicia.</p></div>
+      <div class="marco"><h3>IA y pensamiento de orden superior</h3><span class="who">Holmes, Bialik &amp; Fadel · Luckin et al.</span><p>Si la tecnología absorbe lo rutinario, el estudiante puede concentrarse en análisis, creación y resolución de problemas complejos. Eso es lo que hay que evaluar.</p></div>
+      <div class="marco"><h3>Ética de la IA</h3><span class="who">Floridi et al. · UNESCO</span><p>El Consenso de Beijing lo formula así: la tecnología al servicio del ser humano y no al revés. El juicio profesional no se delega.</p></div>
+      <div class="marco"><h3>Uso crítico y responsable</h3><span class="who">OCDE</span><p>La competencia no se agota en operar herramientas: exige criterio para decidir cuándo usarlas, cuándo no y con qué consecuencias.</p></div>
+      <div class="marco"><h3>Enfoque IA-First</h3><span class="who">Modelo Educativo EAN 2026</span><p>La tecnología es elemento estructural del aprendizaje desde el inicio, con la misma profundidad en presencial y en virtual. Nunca es un fin en sí misma.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <p class="closing">El Maker no espera el manual completo. <em>Construye, itera, aprende y vuelve a construir.</em></p>
+  </div>
+</section><section class="bloque-taller"><div class="wrap"><div class="caja"><span class="k">El taller de esta competencia</span><h3>Los dos talleres</h3><p>La mesa de trabajo, donde construyes un prototipo y lo rompes, y el banco de pruebas, donde aprendes a desconfiar. Viven en una pieza aparte.</p></div></div></section></div>
+<div class="pie-hub"><div class="wrap">Modelo Educativo EAN 2026</div></div>
+
+<script>
+window.addEventListener("error",function(ev){
+  try{
+    if(!ev || !ev.message || ev.message==="Script error." || (!ev.lineno && !ev.filename)) return;
+    console.error("Fallo en "+(ev.filename||"documento")+" línea "+ev.lineno+":"+ev.colno+" → "+ev.message);
+  }catch(e){}
+});
+
+
+(function(){
+  "use strict";
+  var portada=document.getElementById('portada');
+  var barra=document.getElementById('hubBar');
+  var volver=document.getElementById('hubVolver');
+  var marca=document.getElementById('hubMarca');
+  var NOMBRES={es:'Emprendimiento Sostenible',ph:'Poder Humano',tam:'Tech AI Maker'};
+  function leerHash(){
+    try{ return (location.hash||'').replace('#',''); }catch(e){ return ''; }
+  }
+  function ponerHash(p){
+    try{
+      if(!p){ if(location.hash) history.replaceState(null,'',location.pathname+location.search); }
+      else{ location.hash=p; }
+    }catch(e){ /* iframe sin permiso para tocar la dirección: se navega igual */ }
+  }
+
+  function mostrar(p){
+    var vistas=document.querySelectorAll('.view');
+    for(var i=0;i<vistas.length;i++) vistas[i].classList.remove('visible');
+    if(!p){
+      portada.classList.add('visible');
+      barra.classList.remove('dentro');
+      marca.textContent='Nuevo Modelo Educativo';
+      ponerHash('');
+    }else{
+      portada.classList.remove('visible');
+      document.getElementById('v-'+p).classList.add('visible');
+      barra.classList.add('dentro');
+      marca.textContent='Nuevo Modelo Educativo · '+NOMBRES[p];
+      ponerHash(p);
+    }
+    try{ window.scrollTo(0,0); }catch(e){}
+  }
+  var botones=document.querySelectorAll('[data-ir]');
+  for(var i=0;i<botones.length;i++){
+    (function(b){ b.addEventListener('click',function(){ mostrar(b.getAttribute('data-ir')); }); })(botones[i]);
+  }
+  volver.addEventListener('click',function(){ mostrar(null); });
+  try{
+    window.addEventListener('hashchange',function(){
+      var h=leerHash();
+      mostrar(NOMBRES[h]?h:null);
+    });
+  }catch(e){}
+  var inicial=leerHash();
+  if(NOMBRES[inicial]) mostrar(inicial);
+
+  function postHeight(){
+    try{
+      var h=Math.max(document.body.scrollHeight,document.documentElement.scrollHeight);
+      if(window.parent!==window) window.parent.postMessage({eanHeight:h},'*');
+    }catch(e){}
+  }
+  window.addEventListener('load',postHeight);
+  window.addEventListener('resize',postHeight);
+  document.addEventListener('click',function(){setTimeout(postHeight,400);});
+})();
+
+(function(){
+"use strict";
+try{
+
+var root=document.getElementById("v-es");
+function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e;}
+function $(s){return root.querySelector(s);}
+function cap(s){return s.charAt(0).toUpperCase()+s.slice(1);}
+function lista(a){
+  if(a.length===1) return a[0];
+  if(a.length===2) return a[0]+' y '+a[1];
+  return a.slice(0,-1).join(', ')+' y '+a[a.length-1];
+}
+
+
+/* ===== 01 · VERSIONES ===== */
+var VERSIONES={
+ antes:{stmt:'Descubre oportunidades, valida e implementa modelos, proyectos o iniciativas innovadoras orientadas a crear y transformar organizaciones, mercados o sociedades, que aportan al <mark>desarrollo sostenible</mark>.',
+  deltas:[['Verbo rector','Descubre. Nivel medio de Bloom: la acción se queda en identificar.'],['Nivel de desempeño','Operativo: identificar, validar, implementar.'],['Innovación','Atributo secundario del proyecto.'],['Sostenibilidad','Mencionada al final, como aporte.'],['Contexto','Implícito.'],['Evaluabilidad','Difusa: múltiples verbos en una sola formulación.']]},
+ ahora:{stmt:'<mark>Construye</mark> procesos emprendedores e innovadores para <mark>crear o transformar</mark> organizaciones y entornos <mark>hacia la sostenibilidad</mark>, generando valor en <mark>contextos diversos e inciertos</mark>.',
+  deltas:[['Verbo rector','Construye. Nivel superior: la acción produce algo que antes no existía.'],['Nivel de desempeño','Transformador: liderar, innovar, crear valor.'],['Innovación','Eje estructural de la competencia.'],['Sostenibilidad','Integrada en el objeto: hacia dónde se transforma.'],['Contexto','Explícito: diversos e inciertos.'],['Evaluabilidad','Clara: un verbo rector, medible por niveles de logro.']]}
+};
+var verBtns=root.querySelectorAll('[data-ver]');
+function renderVer(k){
+  var v=VERSIONES[k];
+  $('#es-verStmt').innerHTML=v.stmt;
+  var dl=$('#es-verDeltas'); dl.innerHTML='';
+  v.deltas.forEach(function(d){var w=el('div','delta');w.appendChild(el('dt',null,d[0]));w.appendChild(el('dd',null,d[1]));dl.appendChild(w);});
+  verBtns.forEach(function(b){b.setAttribute('aria-selected',b.dataset.ver===k?'true':'false');});
+}
+verBtns.forEach(function(b){b.addEventListener('click',function(){renderVer(b.dataset.ver);});});
+renderVer('ahora');
+
+/* ===== 03 · DOBLE MOTOR ===== */
+var MINDSET=[
+ {n:'Gestión de la incertidumbre',link:[1],why:'Leer el entorno es lo que convierte la incertidumbre en información utilizable. Sin lectura del entorno, la incertidumbre solo produce parálisis o aversión al riesgo.'},
+ {n:'Asunción de riesgos adaptativos',link:[5],why:'Asumir riesgos calculados solo tiene sentido si después se mide. La medición de resultados separa el riesgo adaptativo de la apuesta a ciegas.'},
+ {n:'Orientación a la acción y proactividad',link:[0],why:'La iniciativa se concreta cuando se dirige a un problema real. La mentalidad de solucionador es la forma en que la proactividad deja de ser entusiasmo y se vuelve entrega.'},
+ {n:'Aprendizaje a partir del error',link:[5],why:'El error solo enseña si hay evidencia de qué falló. Medir resultados convierte la resiliencia en aprendizaje reflexivo y no en repetir con más ganas.'},
+ {n:'Pensamiento sistémico',link:[1,4],why:'Aquí mindset y acción casi coinciden: comprender interdependencias y diseñar valor sistémico son la misma capacidad vista desde adentro y desde afuera.'},
+ {n:'Capacidad de interpretar la complejidad',link:[1,2,4],why:'Nadie interpreta un sistema complejo solo. La complejidad exige leer el entorno, contrastar con actores diversos y trabajar con gente que piensa distinto.'},
+ {n:'Toma de decisiones informadas',link:[3],why:'Decidir con evidencia se sostiene en el diálogo: validar con otros, negociar y comunicar es lo que hace que una decisión informada además sea adoptada.'}
+];
+var ACCION=['Identificación y resolución de problemas complejos','Lectura estratégica del entorno','Interacción con actores diversos: validación y co-creación','Comunicación, negociación y persuasión','Trabajo en equipos interdisciplinarios','Medición de resultados e impacto'];
+var mList=$('#es-mindsetList'),aList=$('#es-accionList');
+MINDSET.forEach(function(m,i){
+  var li=el('li'),b=el('button');
+  b.type='button';b.setAttribute('aria-pressed','false');
+  b.innerHTML='<b>'+String(i+1).padStart(2,'0')+'</b><span>'+m.n+'</span>';
+  b.addEventListener('click',function(){selM(i);});
+  li.appendChild(b);mList.appendChild(li);
+});
+ACCION.forEach(function(a,i){
+  var li=el('li'),d=el('div','static');
+  d.innerHTML='<b>'+String.fromCharCode(65+i)+'</b><span>'+a+'</span>';
+  li.appendChild(d);aList.appendChild(li);
+});
+function selM(i){
+  mList.querySelectorAll('button').forEach(function(b,j){b.setAttribute('aria-pressed',j===i?'true':'false');});
+  aList.querySelectorAll('.static').forEach(function(s,j){s.classList.toggle('linked',MINDSET[i].link.indexOf(j)>-1);});
+  $('#es-linkText').textContent=MINDSET[i].why;
+}
+
+/* ===== 04 · FICHAS ===== */
+var FICHAS=[
+ {c:'C1',t:'Gestión de la incertidumbre',d:'Capacidad de reconocer, interpretar y actuar en contextos caracterizados por ambigüedad, cambio e información incompleta, transformando la incertidumbre en una fuente de oportunidad para la generación de valor.',pre:'Reconoce, interpreta y actúa en contextos con ambigüedad, cambio e información incompleta, convirtiendo la incertidumbre en oportunidad para generar valor.',pos:'Gestiona entornos altamente inciertos, toma decisiones estratégicas con información incompleta, anticipa escenarios y transforma la incertidumbre en ventaja competitiva.'},
+ {c:'C2',t:'Asunción de riesgos adaptativos',d:'Capacidad de evaluar, asumir y gestionar riesgos de manera informada, ajustando estrategias en función de los resultados y aprendiendo del proceso.',pre:'Identifica riesgos básicos en la implementación de soluciones, toma decisiones informadas en escenarios controlados y ajusta su actuación a partir de los resultados.',pos:'Evalúa riesgos complejos, toma decisiones estratégicas en entornos dinámicos y diseña mecanismos de mitigación que optimizan resultados y maximizan el impacto sostenible.'},
+ {c:'C3',t:'Orientación a la acción y proactividad',d:'Capacidad de actuar con iniciativa, anticiparse a las necesidades del entorno y ejecutar soluciones sin depender de condiciones ideales.',pre:'Demuestra iniciativa en la resolución de problemas, participa activamente en el desarrollo de soluciones y asume un rol propositivo.',pos:'Lidera la ejecución de estrategias, moviliza recursos y anticipa oportunidades, generando acción organizada y orientada a resultados.'},
+ {c:'C4',t:'Aprendizaje a partir del error',d:'Capacidad de interpretar el error como fuente de aprendizaje, ajustar estrategias y sostener la acción frente a la adversidad.',pre:'Reconoce errores en sus procesos, reflexiona sobre sus resultados y realiza ajustes básicos para mejorar su desempeño en futuras acciones.',pos:'Analiza fallas en procesos complejos, transforma el error en conocimiento estratégico y rediseña soluciones con mayor efectividad e impacto.'},
+ {c:'C5',t:'Pensamiento sistémico',d:'Capacidad de comprender las interrelaciones entre actores, variables y procesos dentro de sistemas complejos, integrando dimensiones económicas, sociales y ambientales.',pre:'Identifica relaciones básicas entre elementos de un sistema y comienza a integrar variables sociales, económicas y ambientales en la formulación de soluciones.',pos:'Diseña soluciones sistémicas, articula actores y variables en contextos complejos y toma decisiones considerando impactos de corto, mediano y largo plazo.'},
+ {c:'C6',t:'Capacidad de interpretar la complejidad',d:'Capacidad de analizar, sintetizar e interpretar múltiples variables en entornos dinámicos, para diseñar soluciones coherentes, viables y adaptativas.',pre:'Reconoce la existencia de múltiples variables en un problema, analiza información relevante y propone soluciones iniciales en contextos relativamente estructurados.',pos:'Interpreta sistemas complejos, integra información multidimensional y diseña soluciones adaptativas que responden a contextos dinámicos e inciertos.'},
+ {c:'C7',t:'Toma de decisiones informadas',prop:true,d:'Capacidad de decidir con base en información, evidencia y criterio ético, ponderando alternativas e integrando impactos económicos, sociales y ambientales.',pre:'Recolecta y analiza información relevante, contrasta alternativas y sustenta sus decisiones con criterios básicos de sostenibilidad y ética en contextos acotados.',pos:'Decide en escenarios de información incompleta y alta exigencia, integra evidencia multidimensional y asume responsabilidad por los impactos de sus decisiones.'}
+];
+var fw=$('#es-fichas');
+FICHAS.forEach(function(f){
+  var art=el('article','ficha'),head=el('button');
+  head.type='button';head.setAttribute('aria-expanded','false');
+  head.innerHTML='<span class="code">'+f.c+'</span><h3>'+f.t+(f.prop?'<span class="badge">Propuesta</span>':'')+'</h3><span class="toggle">Ver alcance</span>';
+  var body=el('div','body','<dl><dt>Definición</dt><dd>'+f.d+'</dd><dt class="pre">En pregrado</dt><dd>'+f.pre+'</dd><dt class="pos">En posgrado</dt><dd>'+f.pos+'</dd></dl>');
+  head.addEventListener('click',function(){
+    var open=art.classList.toggle('open');
+    head.setAttribute('aria-expanded',open?'true':'false');
+    head.querySelector('.toggle').firstChild.nodeValue=open?'Cerrar ':'Ver alcance ';
+  });
+  art.appendChild(head);art.appendChild(body);fw.appendChild(art);
+});
+
+/* ===== 05 · NIVELADOR ===== */
+var NIVELES=['Inicial','Básico','Intermedio','Avanzado'];
+var EQ=['Explorador','Implementador','Transformador'];
+var PROG={
+ pregrado:[
+  {ser:'Muestra apertura frente a la incertidumbre, reconoce el cambio como parte del entorno y desarrolla disposición para aprender de situaciones no estructuradas.',saber:'Comprende la incertidumbre como condición natural del entorno y reconoce su potencial como espacio para identificar oportunidades y retos de sostenibilidad.',hacer:'Identifica problemas y oportunidades en contextos cercanos, reconoce variables básicas del entorno y explora alternativas sin requerir estructuras definidas.',ra:'Reconoce la incertidumbre como espacio de aprendizaje y como oportunidad para identificar y abordar retos de sostenibilidad en contextos reales.'},
+  {ser:'Desarrolla una actitud proactiva frente a los retos, asume responsabilidad sobre sus decisiones iniciales y muestra disposición para actuar con iniciativa.',saber:'Comprende los principios básicos de evaluación de riesgos y entiende la relación entre acción, resultado y aprendizaje.',hacer:'Evalúa riesgos en escenarios controlados, toma decisiones informadas con la información disponible y ejecuta soluciones iniciales, ajustando su actuación.',ra:'Reconoce la incertidumbre como espacio de aprendizaje y oportunidad para la creación de valor.'},
+  {ser:'Actúa con autonomía, resiliencia y responsabilidad frente a los resultados, asumiendo el error como parte del proceso.',saber:'Comprende la relación entre acción, resultado y aprendizaje, e integra criterios de sostenibilidad en la toma de decisiones.',hacer:'Implementa iniciativas emprendedoras en contextos reales o simulados, analiza resultados, ajusta estrategias y mejora soluciones considerando impactos.',ra:'Evalúa riesgos, toma decisiones informadas y ajusta su estrategia ante resultados adversos. Implementa iniciativas con creatividad y resiliencia, y aplica mejoras a partir de los errores identificados.'},
+  {ser:'Se reconoce como agente de cambio con propósito, actúa con pensamiento sistémico, criterio ético y compromiso con la generación de valor sostenible.',saber:'Comprende la complejidad de los sistemas y reconoce las interdependencias entre actores, recursos, regulaciones e impactos.',hacer:'Analiza variables complejas del entorno, diseña soluciones sostenibles, decide con base en evidencia y lidera acciones con impacto positivo.',ra:'Integra perspectivas sociales, económicas y ambientales en la toma de decisiones emprendedoras. Analiza variables y relaciones complejas para diseñar soluciones coherentes y sostenibles.'}
+ ],
+ posgrado:[
+  {ser:'Muestra apertura frente a la incertidumbre como condición inherente de los entornos organizacionales y reconoce su potencial como motor de transformación.',saber:'Analiza la incertidumbre en contextos organizacionales y comprende su relación con la identificación de oportunidades de sostenibilidad.',hacer:'Identifica oportunidades estratégicas en contextos reales, reconoce variables del entorno y formula ideas iniciales para abordar retos de sostenibilidad.',ra:'Reconoce la incertidumbre como oportunidad estratégica para identificar y abordar retos de sostenibilidad en contextos organizacionales y sectoriales.'},
+  {ser:'Asume una postura crítica y responsable frente a la toma de decisiones, reconociendo el impacto de sus acciones en el entorno.',saber:'Comprende modelos de evaluación de riesgos, sostenibilidad y toma de decisiones en entornos complejos.',hacer:'Evalúa riesgos en escenarios organizacionales, decide con información y diseña estrategias iniciales orientadas a la generación de valor sostenible.',ra:'Evalúa riesgos en materia de sostenibilidad, diseña soluciones y formula estrategias que maximizan el impacto positivo en contextos organizacionales.'},
+  {ser:'Actúa con resiliencia, autonomía y liderazgo en la ejecución de iniciativas, asumiendo el error como parte del aprendizaje estratégico.',saber:'Comprende la relación entre resultados, impacto y sostenibilidad, integrando variables económicas, sociales y ambientales.',hacer:'Implementa soluciones emprendedoras en contextos reales, analiza resultados, ajusta estrategias y articula actores para generar impacto sostenible.',ra:'Implementa iniciativas sostenibles, analiza resultados, identifica oportunidades de mejora y rediseña estrategias para maximizar el impacto.'},
+  {ser:'Se consolida como líder estratégico con propósito, capaz de influir en organizaciones y ecosistemas hacia la generación de valor sostenible.',saber:'Comprende sistemas complejos e interdependencias entre actores, mercados, regulaciones e impactos.',hacer:'Diseña e implementa soluciones sistémicas, lidera procesos de transformación organizacional y genera impacto medible.',ra:'Analiza variables complejas, integra perspectivas económicas, sociales y ambientales, y lidera decisiones estratégicas que generan valor sostenible en organizaciones y territorios.'}
+ ]
+};
+var track='pregrado',lvl=0,stopsWrap=$('#es-stops');
+NIVELES.forEach(function(n,i){
+  var b=el('button','stop');b.type='button';b.setAttribute('aria-pressed',i===0?'true':'false');
+  b.innerHTML='<span class="dot"></span><span class="lbl">'+n+'</span>';
+  b.addEventListener('click',function(){lvl=i;renderNivel();});
+  stopsWrap.appendChild(b);
+});
+var equivWrap=$('#es-equiv');
+EQ.forEach(function(n){equivWrap.appendChild(el('span',null,n));});
+root.querySelectorAll('[data-track]').forEach(function(b){
+  b.addEventListener('click',function(){track=b.dataset.track;renderNivel();});
+});
+function renderNivel(){
+  $('#es-niveles').style.setProperty('--acc',track==='pregrado'?'var(--pregrado)':'var(--posgrado)');
+  root.querySelectorAll('[data-track]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.track===track?'true':'false');});
+  stopsWrap.querySelectorAll('.stop').forEach(function(b,i){b.setAttribute('aria-pressed',i===lvl?'true':'false');});
+  $('#es-railFill').style.width=(lvl/3*100)+'%';
+  var g=lvl<=1?0:(lvl===2?1:2);
+  equivWrap.querySelectorAll('span').forEach(function(s,i){s.classList.toggle('on',i===g);});
+  var d=PROG[track][lvl],p=$('#es-panel4');
+  p.innerHTML='<div class="c"><h4>Ser</h4><p>'+d.ser+'</p></div><div class="c"><h4>Saber</h4><p>'+d.saber+'</p></div><div class="c"><h4>Saber hacer</h4><p>'+d.hacer+'</p></div><div class="c"><h4>Resultado de aprendizaje</h4><p>'+d.ra+'</p></div>';
+  p.classList.remove('fade-swap');void p.offsetWidth;p.classList.add('fade-swap');
+}
+renderNivel();
+
+}catch(e){
+  console.error("[Emprendimiento Sostenible] "+(e&&e.message?e.message:e), e);
+  var av=document.getElementById("v-es");
+  if(av){var b=document.createElement("div");b.className="aviso-fallo";b.textContent="Esta sección no cargó por completo. Recarga la página; si persiste, avísanos.";av.insertBefore(b, av.firstChild);}
+}
+})();
+(function(){
+"use strict";
+try{
+
+var root=document.getElementById("v-ph");
+
+/* ================= DATOS ================= */
+
+var DEFS = {
+  pre:{t:'Capacidad del estudiante eanista para comprender el comportamiento propio y ajeno en contexto, diseñar soluciones accesibles e inclusivas y ejercer un liderazgo consciente orientado al bienestar individual y colectivo, actuando con pertinencia, calidad y suficiencia ante situaciones que demandan comprensión humana profunda, cooperación y responsabilidad.',
+       n:'Mentalidad Human-Ready. La ruta es: reconocimiento → aprendizaje → aplicación en contextos variados → transferencia.'},
+  pos:{t:'Capacidad del profesional eanista para diseñar, liderar e implementar entornos organizacionales y sociales que potencien el bienestar, la inclusión y la cooperación, tomando decisiones basadas en evidencia sobre comportamiento humano y liderando con propósito, criterio ético y capacidad de transferencia a contextos de alta complejidad.',
+       n:'Mentalidad Human-Driven. La ruta es: diagnóstico → diseño estratégico → implementación con impacto → transformación sistémica verificable.'}
+};
+
+var CAPS = [
+  {c:'C1',t:'Comprensión funcional del comportamiento humano',
+   d:'Capacidad de observar, describir e interpretar el comportamiento propio y ajeno en contexto, identificando las condiciones que lo generan, mantienen o modifican, sin recurrir a atribuciones esencialistas ni a juicios evaluativos descontextualizados.',
+   pre:'Describe situaciones interpersonales identificando el contexto y minimizando los juicios de valor. Practica la toma de perspectiva en casos concretos y desarrolla un vocabulario para hablar del comportamiento sin atribuciones esencialistas.',
+   pos:'Aplica análisis contextual a situaciones organizacionales complejas, diseña entornos que favorecen comportamientos cooperativos y evalúa el impacto de las contingencias institucionales sobre el desempeño de equipos y comunidades.'},
+  {c:'C2',t:'Liderazgo consciente',
+   d:'Capacidad de influir en el comportamiento de otros mediante el establecimiento de repertorios comportamentales deseados y la construcción de contextos que favorecen la cooperación, la responsabilidad compartida y el bienestar colectivo.',
+   pre:'Identifica comportamientos de liderazgo en casos concretos, practica técnicas en interacciones de equipo y reflexiona sobre la relación entre sus propias acciones y el comportamiento de otros en contextos colaborativos.',
+   pos:'Diseña sistemas de gestión basados en procesos de cambio organizacional que implican la creación de entornos seguros y cooperativos, y evalúa el impacto de sus decisiones sobre el bienestar y el desempeño de las personas a su cargo.'},
+  {c:'C3',t:'Diseño orientado a la persona: accesibilidad y humanización',
+   d:'Capacidad de diseñar experiencias, entornos, productos y soluciones aplicando los principios del Diseño Universal para el Aprendizaje (DUA) y el diseño centrado en el usuario, asegurando que sean accesibles, pertinentes y participativos para poblaciones diversas desde su concepción.',
+   pre:'Aplica principios del DUA en el diseño de materiales, presentaciones o propuestas, identifica barreras de accesibilidad en entornos existentes y propone modificaciones concretas y verificables que amplíen la participación de personas diversas.',
+   pos:'Diseña sistemas, políticas y entornos organizacionales que institucionalizan la accesibilidad e inclusión, evalúa su impacto mediante indicadores observables y lidera procesos de transformación cultural orientados a la equidad.'},
+  {c:'C4',t:'Comunicación humanizada y construcción de acuerdos',
+   d:'Capacidad de producir comportamiento verbal y no verbal que genere relaciones de colaboración, resuelva conflictos y construya contextos de bienestar compartido. Incluye habilidades lingüísticas y flexibilidad psicológica como repertorios para actuar con pertinencia en situaciones relacionales nuevas y complejas.',
+   pre:'Practica formas de comunicación que reconocen la perspectiva del otro, ajusta su repertorio verbal a contextos diversos y construye acuerdos en situaciones de desacuerdo, desarrollando un lenguaje funcional para la colaboración.',
+   pos:'Diseña procesos de comunicación organizacional que promueven la cooperación y el bienestar, media en conflictos complejos con criterio ético y evidencia, y construye marcos relacionales que sostienen la cohesión y el propósito colectivo.'}
+];
+
+
+
+var NIVELES=['Inicial','Básico','Intermedio','Avanzado'];
+var PROG = {
+ pregrado:[
+  {ser:'Muestra curiosidad y apertura frente a la diversidad de comportamientos humanos. Reconoce que sus propias acciones tienen efectos sobre otros y se muestra dispuesto a observar antes de juzgar.',
+   saber:'Comprende qué es el análisis contextual del comportamiento y cómo permite describir situaciones interpersonales sin recurrir a atribuciones de intención o de rasgo.',
+   hacer:'Describe situaciones de interacción identificando antecedentes, comportamientos y consecuencias. Utiliza principios básicos del DUA para mejorar la accesibilidad de un recurso concreto.',
+   ra:'Describe situaciones relacionales en términos contextuales y aplica al menos un principio de accesibilidad en un producto académico, demostrando comprensión básica del Poder Humano.'},
+  {ser:'Desarrolla una actitud reflexiva frente a su propio comportamiento y al de otros en contextos de colaboración. Reconoce el valor del reconocimiento del otro como herramienta fundamental para el liderazgo.',
+   saber:'Comprende los principios de la toma de perspectiva como repertorio relacional, y los criterios del DUA y de Humanise para el diseño de productos y procesos accesibles.',
+   hacer:'Aplica análisis contextual en casos concretos de interacción. Diseña propuestas accesibles para poblaciones diversas. Practica técnicas positivas para el manejo de equipos, con retroalimentación del tutor.',
+   ra:'Resuelve situaciones relacionales concretas aplicando análisis contextual y criterios de humanización y accesibilidad, demostrando criterio ético y disposición colaborativa verificable.'},
+  {ser:'Actúa con responsabilidad y consistencia en contextos relacionales diversos. Reconoce las condiciones que influyen en el comportamiento de equipos y propone ajustes basados en observación empática sistemática.',
+   saber:'Conoce aplicaciones del análisis contextual al liderazgo, el diseño inclusivo y la comunicación humanizada en distintos campos disciplinares.',
+   hacer:'Co-diseña soluciones accesibles e inclusivas en contextos interdisciplinarios. Lidera interacciones grupales con criterios verificables para la construcción de acuerdos. Transfiere repertorios aprendidos a situaciones nuevas.',
+   ra:'Diseña y lidera experiencias colaborativas con criterios contextuales explícitos, demostrando transferencia de repertorios a situaciones distintas a las entrenadas.'},
+  {ser:'Se reconoce, y es reconocido por otros, como líder consciente con propósito humano. Comprende el impacto de sus comportamientos sobre el bienestar colectivo y actúa con consistencia ética y evidencia.',
+   saber:'Comprende los marcos científicos del liderazgo consciente, el DUA y el análisis contextual, y su relación con el bienestar organizacional y la inclusión sistémica.',
+   hacer:'Diseña e implementa entornos, experiencias o soluciones que promueven bienestar, inclusión y cooperación con impacto verificable. Lidera procesos de cambio comportamental en equipos reales, evaluando resultados con criterios observables.',
+   ra:'Lidera el diseño de entornos humanizados con impacto colectivo verificable, evidenciando pensamiento contextual avanzado, liderazgo consciente y capacidad de transferencia a contextos de alta incertidumbre.'}
+ ],
+ posgrado:[
+  {ser:'Muestra apertura al análisis contextual de situaciones organizacionales. Reconoce el potencial del liderazgo consciente para transformar entornos y equipos.',
+   saber:'Analiza aplicaciones del análisis contextual en gestión de personas, diseño organizacional y liderazgo. Comprende las implicaciones éticas y sociales del diseño de contingencias institucionales.',
+   hacer:'Identifica condiciones contextuales que sostienen comportamientos problemáticos en organizaciones reales. Propone ideas iniciales para diseñar entornos más accesibles, cooperativos y orientados al bienestar.',
+   ra:'Reconoce el valor del enfoque contextual para el liderazgo y propone intervenciones iniciales basadas en el análisis funcional de situaciones organizacionales concretas.'},
+  {ser:'Asume una postura crítica y responsable frente al impacto de las contingencias organizacionales sobre el comportamiento de personas y equipos.',
+   saber:'Comprende modelos de liderazgo basados en evidencia, principios del DUA y de Humanise aplicados a entornos organizacionales, y estrategias de comunicación humanizada para construir acuerdos en contextos de diversidad.',
+   hacer:'Diseña propuestas de mejora organizacional basadas en análisis funcional. Aplica criterios del DUA para rediseñar procesos, entornos o servicios institucionales con mayor accesibilidad e inclusión.',
+   ra:'Formula estrategias de liderazgo y diseño organizacional basadas en evidencia, que optimizan el bienestar, la cooperación y la inclusión en contextos reales.'},
+  {ser:'Lidera procesos de transformación organizacional con enfoque contextual, reconociendo la relación entre el diseño de condiciones, el bienestar y los resultados colectivos.',
+   saber:'Conoce aplicaciones del análisis contextual en liderazgo, diseño de sistemas de reforzamiento organizacional y evaluación del impacto de intervenciones sobre el comportamiento colectivo.',
+   hacer:'Implementa intervenciones de liderazgo consciente en contextos reales, articulando equipos diversos, evaluando el impacto de sus acciones y ajustando estrategias con base en datos observacionales.',
+   ra:'Lidera proyectos de transformación organizacional con enfoque contextual que generan valor estratégico, integrando análisis de evidencia, diseño accesible e impacto sobre el bienestar colectivo.'},
+  {ser:'Se consolida como líder de transformación humana con propósito, capaz de influir en organizaciones y territorios desde un enfoque contextual, ético y basado en evidencia.',
+   saber:'Comprende marcos estratégicos, éticos y científicos del liderazgo consciente, el diseño universal y Humanise, y su relación con el bienestar organizacional sistémico y la sostenibilidad.',
+   hacer:'Diseña e implementa ecosistemas organizacionales humanizados con criterios contextuales explícitos, generando soluciones escalables con impacto verificable sobre el bienestar, la inclusión y la cooperación.',
+   ra:'Diseña y lidera estrategias de transformación humana y organizacional con base contextual rigurosa, generando impacto medible y sostenible, alineado con el propósito institucional de abundancia para la humanidad.'}
+ ]
+};
+
+
+
+/* ================= UTILIDADES ================= */
+function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e;}
+function $(s){return root.querySelector(s);}
+function esc(s){return String(s).replace(/[&<>"']/g,function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m];});}
+function cap(s){return String(s).charAt(0).toUpperCase()+String(s).slice(1);}
+
+/* ================= 01 · DEFINICIÓN ================= */
+var defBtns=root.querySelectorAll('[data-def]');
+function renderDef(k){
+  $('#ph-defText').textContent=DEFS[k].t;
+  $('#ph-defNote').textContent=DEFS[k].n;
+  defBtns.forEach(function(b){b.setAttribute('aria-selected', b.dataset.def===k?'true':'false');});
+}
+defBtns.forEach(function(b){b.addEventListener('click',function(){renderDef(b.dataset.def);});});
+renderDef('pre');
+
+/* ================= 02 · CAPACIDADES ================= */
+var fw=$('#ph-fichas');
+CAPS.forEach(function(f){
+  var art=el('article','ficha');
+  var head=el('button');
+  head.type='button'; head.setAttribute('aria-expanded','false');
+  head.innerHTML='<span class="code">'+f.c+'</span><h3>'+f.t+'</h3><span class="toggle">Ver alcance</span>';
+  var body=el('div','body','<dl><dt>Definición</dt><dd>'+f.d+'</dd><dt class="pre">En pregrado</dt><dd>'+f.pre+'</dd><dt class="pos">En posgrado</dt><dd>'+f.pos+'</dd></dl>');
+  head.addEventListener('click',function(){
+    var open=art.classList.toggle('open');
+    head.setAttribute('aria-expanded',open?'true':'false');
+    head.querySelector('.toggle').firstChild.nodeValue=open?'Cerrar ':'Ver alcance ';
+  });
+  art.appendChild(head);art.appendChild(body);fw.appendChild(art);
+});
+
+/* ================= 04 · NIVELADOR ================= */
+var track='pregrado', lvl=0;
+var stopsWrap=$('#ph-stops');
+NIVELES.forEach(function(n,i){
+  var b=el('button','stop');
+  b.type='button'; b.setAttribute('aria-pressed', i===0?'true':'false');
+  b.innerHTML='<span class="dot"></span><span class="lbl">'+n+'</span>';
+  b.addEventListener('click',function(){lvl=i;renderNivel();});
+  stopsWrap.appendChild(b);
+});
+root.querySelectorAll('[data-track]').forEach(function(b){
+  b.addEventListener('click',function(){track=b.dataset.track;renderNivel();});
+});
+function renderNivel(){
+  $('#ph-niveles').style.setProperty('--acc', track==='pregrado'?'var(--pregrado)':'var(--posgrado)');
+  root.querySelectorAll('[data-track]').forEach(function(b){b.setAttribute('aria-pressed', b.dataset.track===track?'true':'false');});
+  stopsWrap.querySelectorAll('.stop').forEach(function(b,i){b.setAttribute('aria-pressed', i===lvl?'true':'false');});
+  $('#ph-railFill').style.width=(lvl/(NIVELES.length-1)*100)+'%';
+  var d=PROG[track][lvl], p=$('#ph-panel4');
+  p.innerHTML='<div class="c"><h4>Ser</h4><p>'+d.ser+'</p></div>'+
+    '<div class="c"><h4>Saber</h4><p>'+d.saber+'</p></div>'+
+    '<div class="c"><h4>Saber hacer</h4><p>'+d.hacer+'</p></div>'+
+    '<div class="c"><h4>Resultado de aprendizaje</h4><p>'+d.ra+'</p></div>';
+  p.classList.remove('fade-swap'); void p.offsetWidth; p.classList.add('fade-swap');
+}
+renderNivel();
+
+}catch(e){
+  console.error("[Poder Humano] "+(e&&e.message?e.message:e), e);
+  var av=document.getElementById("v-ph");
+  if(av){var b=document.createElement("div");b.className="aviso-fallo";b.textContent="Esta sección no cargó por completo. Recarga la página; si persiste, avísanos.";av.insertBefore(b, av.firstChild);}
+}
+})();
+(function(){
+"use strict";
+try{
+
+var root=document.getElementById("v-tam");
+function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e;}
+function $(s){return root.querySelector(s);}
+function esc(s){return String(s).replace(/[&<>"']/g,function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m];});}
+
+/* ===== 01 · TRIADA ===== */
+var TRI=[
+ {w:'Tech',s:'Tecnologías emergentes',
+  p:'Simuladores, gemelos digitales, realidad aumentada, laboratorios remotos, fabricación digital, analítica de datos. La inteligencia artificial es una de ellas, no la única.',
+  c:'El Modelo lo dice así: la tecnología nunca constituye un fin en sí mismo; su valor reside en fortalecer el aprendizaje, ampliar las posibilidades de creación y facilitar la resolución de problemas complejos.'},
+ {w:'AI',s:'Copiloto, no piloto',
+  p:'La IA multiplica el impacto de las capacidades humanas y libera al estudiante para tareas de análisis, creación y resolución de problemas complejos.',
+  c:'La condición es explícita: trabajar con tecnologías emergentes sin delegar en ellas el juicio profesional. El criterio se queda del lado humano.'},
+ {w:'Maker',s:'Aprender creando',
+  p:'Diseñar, experimentar, construir, probar y mejorar soluciones frente a desafíos auténticos. El estudiante que aprende es el que fabrica.',
+  c:'Learning by making. Promueve la experimentación, el prototipado, la iteración y la resolución creativa de problemas. Y reconoce el error como parte del proceso.'}
+];
+var triW=$('#tam-triada');
+TRI.forEach(function(t,i){
+  var b=el('button','triword','<span class="w">'+t.w+'</span><span class="s">'+t.s+'</span>');
+  b.type='button'; b.setAttribute('aria-pressed', i===0?'true':'false');
+  b.addEventListener('click',function(){selTri(i);});
+  triW.appendChild(b);
+});
+function selTri(i){
+  triW.querySelectorAll('.triword').forEach(function(b,j){b.setAttribute('aria-pressed',j===i?'true':'false');});
+  $('#tam-tribody').innerHTML='<p>'+TRI[i].p+'</p><p class="cita">'+TRI[i].c+'</p>';
+}
+selTri(0);
+
+var DEFS={
+ pre:{t:'Capacidad del estudiante eanista para utilizar la inteligencia artificial como copiloto de conocimiento, herramienta de creación y medio de amplificación del potencial humano, integrándola de manera ética, crítica y estratégica en la generación de soluciones con impacto económico, social y ambiental.',
+      n:'Mentalidad AI-Ready: apropiación y uso creativo de la tecnología como herramienta de aprendizaje y generación de soluciones iniciales.'},
+ pos:{t:'Capacidad del profesional eanista para diseñar, liderar e implementar soluciones estratégicas potenciadas por inteligencia artificial, integrando análisis crítico, gobernanza ética y enfoque sostenible para generar transformación organizacional y social con impacto escalable.',
+      n:'Mentalidad AI-Driven: diseño estratégico, liderazgo tecnológico y transformación organizacional con impacto escalable.'}
+};
+var defBtns=root.querySelectorAll('[data-def]');
+function renderDef(k){
+  $('#tam-defText').textContent=DEFS[k].t; $('#tam-defNote').textContent=DEFS[k].n;
+  defBtns.forEach(function(b){b.setAttribute('aria-selected',b.dataset.def===k?'true':'false');});
+}
+defBtns.forEach(function(b){b.addEventListener('click',function(){renderDef(b.dataset.def);});});
+renderDef('pre');
+
+/* ===== 03 · CAPACIDADES ===== */
+var CAPS={
+ ready:[
+  {t:'Alfabetización en IA y tecnología',d:'Comprender fundamentos, alcances y riesgos de los sistemas.',a:'En tu clase: que el estudiante sepa explicar por qué falló, no solo que falló.'},
+  {t:'Interacción estratégica con sistemas de IA',d:'Formular instrucciones y usar la IA como copiloto cognitivo.',a:'En tu clase: pide el prompt junto con el resultado. El prompt también es evidencia.'},
+  {t:'Co-creación y prototipado',d:'Usar la tecnología en procesos de ideación y diseño de soluciones.',a:'En tu clase: que la primera versión sea rápida y la segunda salga de probarla con el aliado.'},
+  {t:'Pensamiento crítico y evaluación algorítmica',d:'Analizar los resultados generados y reconocer sesgos.',a:'En tu clase: entrega una salida con un error y pide que lo encuentren y lo argumenten.'},
+  {t:'Innovación y emprendimiento potenciado por tecnología',d:'Identificar oportunidades y generar valor con apoyo tecnológico.',a:'En tu clase: qué se puede hacer hoy en tu disciplina que hace tres años no era viable.'},
+  {t:'Ética y responsabilidad',d:'Considerar las implicaciones sociales y ambientales de su uso.',a:'En tu clase: haz explícito qué uso de tecnología es válido en la evidencia y por qué.'}
+ ],
+ driven:[
+  {t:'Diseño estratégico con IA',d:'Integrar la tecnología en modelos de negocio y en políticas.',a:'En tu clase: dónde cambia el modelo de negocio del aliado si la tecnología entra en su operación.'},
+  {t:'Gobernanza y ética algorítmica',d:'Evaluar impactos regulatorios y sociales de los sistemas.',a:'En tu clase: quién responde cuando el sistema se equivoca, y con qué marco.'},
+  {t:'Modelamiento y decisiones basadas en evidencia',d:'Decidir apoyado en modelos y datos.',a:'En tu clase: qué decisión cambia con el dato y cuál se toma igual sin él.'},
+  {t:'Innovación escalable',d:'Diseñar soluciones replicables y sostenibles.',a:'En tu clase: qué haría falta para que esto funcione en diez organizaciones y no en una.'},
+  {t:'Transformación organizacional',d:'Liderar procesos de cambio tecnológico.',a:'En tu clase: quién se resiste al cambio y por qué tiene razón en parte.'},
+  {t:'Evaluación de impacto',d:'Medir resultados económicos, sociales y ambientales.',a:'En tu clase: qué indicador probaría que sirvió, acordado antes de empezar.'}
+ ]
+};
+var capGrid=$('#tam-capGrid'), mind='ready';
+function renderCaps(){
+  capGrid.innerHTML='';
+  CAPS[mind].forEach(function(c,i){
+    var d=el('div','cap stagger','<span class="n">0'+(i+1)+'</span><h3>'+c.t+'</h3><p>'+c.d+'</p><p class="aula">'+c.a+'</p>');
+    d.style.animationDelay=(i*55)+'ms';
+    capGrid.appendChild(d);
+  });
+  root.querySelectorAll('[data-mind]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.mind===mind?'true':'false');});
+}
+root.querySelectorAll('[data-mind]').forEach(function(b){
+  b.addEventListener('click',function(){mind=b.dataset.mind;renderCaps();});
+});
+renderCaps();
+
+/* ===== 06 · NIVELADOR ===== */
+var NIVELES=['Inicial','Básico','Intermedio','Avanzado'];
+var EQ=['Explorador','Implementador','Transformador'];
+var PROG={
+ pregrado:[
+  {ser:'Muestra curiosidad y apertura frente al uso de la tecnología como apoyo al aprendizaje, y reconoce la importancia de un uso responsable.',
+   saber:'Comprende qué es la inteligencia artificial, para qué sirve y cuáles son sus alcances y limitaciones básicas.',
+   hacer:'Utiliza herramientas tecnológicas para apoyar tareas académicas como lectura, escritura, organización de ideas y comprensión de contenidos.',
+   ra:'Reconoce el papel de la tecnología como herramienta de apoyo en su proceso formativo y la usa de manera básica y responsable.'},
+  {ser:'Desarrolla una actitud crítica frente a la información generada por sistemas de IA y comprende la importancia de usarla con criterio ético y académico.',
+   saber:'Entiende cómo funcionan, en términos generales, estos sistemas y conoce estrategias básicas de interacción: formulación de instrucciones, preguntas y validación de resultados.',
+   hacer:'Integra la tecnología en actividades académicas y proyectos formativos para idear, analizar información y estructurar soluciones iniciales.',
+   ra:'Utiliza la tecnología para resolver problemas académicos y validar información, demostrando criterio en la selección y uso de los resultados generados.'},
+  {ser:'Actúa con autonomía y responsabilidad, reconociendo el impacto de la tecnología en el entorno social, profesional y ambiental.',
+   saber:'Conoce aplicaciones de la IA en distintos campos disciplinares y comprende cómo pueden aportar a la innovación y la sostenibilidad.',
+   hacer:'Co-crea prototipos y soluciones con apoyo tecnológico en contextos interdisciplinarios, integrando análisis crítico y creatividad.',
+   ra:'Diseña y desarrolla soluciones funcionales que responden a retos reales, integrando conocimientos de su disciplina y pensamiento crítico.'},
+  {ser:'Se reconoce como creador tecnológico con propósito humano, comprometido con el uso ético de la tecnología y su impacto en la sociedad.',
+   saber:'Comprende las implicaciones éticas, sociales y estratégicas del uso de la tecnología en la generación de soluciones sostenibles.',
+   hacer:'Diseña e implementa soluciones innovadoras orientadas a resolver problemas reales con impacto económico, social y ambiental.',
+   ra:'Lidera el desarrollo de proyectos que generan valor y aportan a soluciones sostenibles, evidenciando pensamiento crítico, creatividad y responsabilidad ética.'}
+ ],
+ posgrado:[
+  {ser:'Muestra apertura al cambio tecnológico y reconoce su potencial para transformar organizaciones y sectores.',
+   saber:'Analiza aplicaciones estratégicas de la tecnología en su campo profesional y comprende sus implicaciones éticas, sociales y regulatorias.',
+   hacer:'Identifica oportunidades de mejora organizacional o sectorial mediante el uso de herramientas tecnológicas.',
+   ra:'Reconoce el valor de la tecnología como motor de transformación y propone ideas iniciales para su aplicación en contextos profesionales.'},
+  {ser:'Asume una postura crítica y responsable frente al uso de la tecnología en la toma de decisiones organizacionales.',
+   saber:'Comprende modelos de análisis de datos, automatización de procesos y principios básicos de gobernanza de IA.',
+   hacer:'Diseña propuestas de mejora o innovación organizacional apoyadas en tecnología, integrando análisis de información y criterios de sostenibilidad.',
+   ra:'Formula estrategias de intervención que optimizan procesos, generan eficiencia y consideran el impacto social y ambiental.'},
+  {ser:'Lidera procesos de innovación tecnológica con enfoque ético, reconociendo la relación entre tecnología, sostenibilidad y desarrollo humano.',
+   saber:'Conoce aplicaciones avanzadas en innovación, analítica predictiva y transformación digital.',
+   hacer:'Implementa proyectos AI-Driven en contextos reales, articulando equipos interdisciplinarios y evaluando riesgos y oportunidades.',
+   ra:'Lidera proyectos de transformación que generan valor estratégico, integrando análisis de datos, creatividad e impacto sostenible.'},
+  {ser:'Se consolida como líder de transformación tecnológica con propósito humano, capaz de influir en organizaciones y territorios.',
+   saber:'Comprende marcos estratégicos, éticos y regulatorios de la tecnología y su relación con la innovación, el emprendimiento y la sostenibilidad.',
+   hacer:'Diseña e implementa ecosistemas de innovación potenciados por tecnología, generando soluciones escalables con impacto económico, social y ambiental.',
+   ra:'Diseña y lidera estrategias de transformación organizacional AI-Driven, generando impacto medible, sostenible y alineado con el propósito institucional de abundancia para la humanidad.'}
+ ]
+};
+var track='pregrado',lvl=0,stopsWrap=$('#tam-stops');
+NIVELES.forEach(function(n,i){
+  var b=el('button','stop');
+  b.type='button'; b.setAttribute('aria-pressed',i===0?'true':'false');
+  b.innerHTML='<span class="dot"></span><span class="lbl">'+n+'</span>';
+  b.addEventListener('click',function(){lvl=i;renderNivel();});
+  stopsWrap.appendChild(b);
+});
+var equivWrap=$('#tam-equiv');
+EQ.forEach(function(n){equivWrap.appendChild(el('span',null,n));});
+root.querySelectorAll('[data-track]').forEach(function(b){
+  b.addEventListener('click',function(){track=b.dataset.track;renderNivel();});
+});
+function renderNivel(){
+  $('#tam-niveles').style.setProperty('--acc',track==='pregrado'?'var(--pregrado)':'var(--posgrado)');
+  root.querySelectorAll('[data-track]').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.track===track?'true':'false');});
+  stopsWrap.querySelectorAll('.stop').forEach(function(b,i){b.setAttribute('aria-pressed',i===lvl?'true':'false');});
+  $('#tam-railFill').style.width=(lvl/(NIVELES.length-1)*100)+'%';
+  var g=lvl<=1?0:(lvl===2?1:2);
+  equivWrap.querySelectorAll('span').forEach(function(s,i){s.classList.toggle('on',i===g);});
+  var d=PROG[track][lvl],p=$('#tam-panel4');
+  p.innerHTML='<div class="c"><h4>Ser</h4><p>'+d.ser+'</p></div>'+
+    '<div class="c"><h4>Saber</h4><p>'+d.saber+'</p></div>'+
+    '<div class="c"><h4>Saber hacer</h4><p>'+d.hacer+'</p></div>'+
+    '<div class="c"><h4>Resultado de aprendizaje</h4><p>'+d.ra+'</p></div>';
+  p.classList.remove('fade-swap'); void p.offsetWidth; p.classList.add('fade-swap');
+}
+renderNivel();
+
+function postHeight(){
+  try{
+    var h=Math.max(document.body.scrollHeight,document.documentElement.scrollHeight);
+    if(window.parent!==window) window.parent.postMessage({eanHeight:h},'*');
+  }catch(e){}
+}
+window.addEventListener('load',postHeight);
+window.addEventListener('resize',postHeight);
+document.addEventListener('click',function(){setTimeout(postHeight,400);});
+
+}catch(e){
+  console.error("[Tech AI Maker] "+(e&&e.message?e.message:e), e);
+  var av=document.getElementById("v-tam");
+  if(av){var b=document.createElement("div");b.className="aviso-fallo";b.textContent="Esta sección no cargó por completo. Recarga la página; si persiste, avísanos.";av.insertBefore(b, av.firstChild);}
+}
+})();
+</script>
+</body>
+</html>
